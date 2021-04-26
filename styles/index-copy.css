@@ -1,0 +1,159 @@
+/* header */
+
+html {
+  background-color: white;
+}
+
+body {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  font-family: "'Open Sans', sans-serif;";
+  border: 1px solid black;
+  background-color: #f4eeeb;
+}
+
+h1,
+h2,
+h3,
+li a {
+  font-family: "IM Fell DW Pica SC", serif;
+  color: black;
+}
+
+.logo-picture {
+  width: 100%;
+}
+
+.logo-banner {
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  left: 10%;
+  bottom: 25%;
+  font-size: 50px;
+}
+
+ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  width: 659px;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 14px 50px;
+  font-size: 18px;
+}
+
+li a:hover {
+  background-color: black;
+  color: white;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+nav {
+  position: relative;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.search-container {
+  position: absolute;
+  top: 1px;
+  right: 0;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  font-size: 18px;
+  background-color: black;
+  color: white;
+}
+
+.search-container button {
+  float: right;
+  padding: 10px 10px;
+  background: white;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* main */
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+/* footer */
+
+/* media queries */
+
+.end-banner {
+  background-image: url("../../images/guitar-roger.jpg");
+  height: 143px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (max-width: 1300px) {
+  body {
+    max-width: 1000px;
+  }
+
+  h1 {
+    position: absolute;
+    left: 9%;
+    font-size: 34px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    max-width: 800px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: black;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  body {
+    background-color: red;
+  }
+
+  .logo-picture {
+    display: none;
+  }
+
+  .logo-banner {
+    background-image: url("../../images/logo-banner.jpg");
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  h1 {
+    left: 60px;
+    bottom: 40px;
+    font-size: 34px;
+  }
+}
