@@ -167,7 +167,7 @@ main {
 
   .logo-banner {
     background-image: url("../../images/logo-banner.jpg");
-    height: 200px;
+    height: 100px;
     background-repeat: no-repeat;
     background-size: cover;
   }
