@@ -100,6 +100,11 @@ main {
   padding: 0;
 }
 
+#hamburger-menu,
+.fas {
+  display: none;
+}
+
 /* footer */
 
 /* media queries */
@@ -131,13 +136,29 @@ main {
 
 @media only screen and (max-width: 800px) {
   body {
-    background-color: black;
+  }
+
+  nav {
+    display: none;
+  }
+
+  #hamburger-menu:checked ~ nav {
+    display: block;
+  }
+
+  .fas {
+    display: block;
+    float: right;
+    margin: 20px 20px;
+  }
+
+  #hamburger-menu {
+    display: none;
   }
 }
 
 @media only screen and (max-width: 650px) {
   body {
-    background-color: red;
   }
 
   .logo-picture {
