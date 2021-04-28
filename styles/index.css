@@ -1,29 +1,49 @@
 @import "imports/general.css";
 
 .mySlides {
-  margin: 20px;
-  display: flex;
-  flex-direction: row;
+  margin: 20px 0px;
+  border: 1px solid black;
 }
 
 .blocks {
   display: inline-block;
+  border: 1px solid black;
+  margin: 0 25px;
+  width: 300px;
 }
 
 .slideshow-container {
   width: 95%;
   position: relative;
-  margin: auto;
+  margin: 0 auto;
   border: 1px solid red;
+  text-align: center;
+}
+
+h2 {
+  border: 1px solid black;
+  min-height: 120px;
+}
+
+.left {
+  text-align: left;
+  border: 1px solid black;
+}
+
+.right {
+  text-align: right;
 }
 
 .prev,
 .next {
   cursor: pointer;
   position: absolute;
-  bottom: 0;
-  top: 50%;
+  top: 200px;
   user-select: none;
+}
+
+.prev {
+  left: 0;
 }
 
 .next {
@@ -31,5 +51,5 @@
 }
 
 .image {
-  width: 50%;
+  width: 100%;
 }

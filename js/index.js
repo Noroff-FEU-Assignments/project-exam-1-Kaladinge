@@ -25,20 +25,35 @@ async function blogList() {
         for(let i = 0; i < 3; i++) {
 
         fadeOne.innerHTML += `<div class="blocks">
-                                <img src="images/guitar-roger.jpg" class="image">
-                                <div class="numbertext">${i} / 9</div>
+                                <img src="${results[i].images[0].src}" class="image">
+                                <div class="numbertext">${i + 1} / 9</div>
+                                <h2 class="left">${results[i].name}</h2>
+                                <p class="left">${results[i].categories[0].name}</p>
+                                <p class="right">${results[i].attributes[0].options}</p>
+                                <p class="right">${results[i].attributes[1].options}</p>
+                                <p class="left">${results[i].description}</p>
                             </div>
                             `
 
         fadeTwo.innerHTML += `<div class="blocks">
-                                <img src="images/guitar-roger.jpg" class="image">
-                                <div class="numbertext">${i + 3} / 9</div>
+                                <img src="${results[i + 3].images[0].src}" class="image">
+                                <div class="numbertext">${i + 4} / 9</div>
+                                <h2 class="left">${results[i + 3].name}</h2>
+                                <p class="left">${results[i + 3].categories[0].name}</p>
+                                <p class="right">${results[i + 3].attributes[0].options}</p>
+                                <p class="right">${results[i + 3].attributes[1].name}</p>
+                                <p class="left">${results[i + 3].description}</p>
                             </div>
                             `
 
         fadeThree.innerHTML += `<div class="blocks">
-                                <img src="images/guitar-roger.jpg" class="image">
-                                <div class="numbertext">${i + 6} / 9</div>
+                                <img src="${results[i + 6].images[0].src}" class="image">
+                                <div class="numbertext">${i + 7} / 9</div>
+                                <h2 class="left">${results[i + 6].name}</h2>
+                                <p class="left">${results[i + 6].categories[0].name}</p>
+                                <p class="right">${results[i + 3].attributes[0].options}</p>
+                                <p class="right">${results[i + 3].attributes[1].options}</p>
+                                <p class="left">${results[i + 6].description}</p>
                             </div>
                             `
 
