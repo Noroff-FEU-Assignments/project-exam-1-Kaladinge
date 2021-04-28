@@ -1,1 +1,73 @@
+@import "imports/general.css";
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #d3cdca;
+}
+
+main {
+  margin-top: 100px;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+main form {
+  padding: 2em;
+  background: white;
+  border-radius: 1rem;
+  position: relative;
+}
+
+main input {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#submit {
+  background-color: #b0aba9;
+  border: none;
+  width: 200px;
+  padding: 1rem;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  border: 1px solid white;
+  font-size: 0.8rem;
+}
+
+#submit:hover {
+  background-color: white;
+  color: #b0aba9;
+  border: 1px solid #b0aba9;
+}
+
+main label {
+  display: block;
+  margin-top: 1rem;
+}
+
+.form-error {
+  display: none;
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.success {
+  display: none;
+  background-color: rgb(127, 207, 36);
+  color: darkgreen;
+  border: 1px solid darkgreen;
+  padding: 10px;
+  border-radius: 1rem;
+  margin-bottom: 10px;
+}
