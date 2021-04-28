@@ -21,12 +21,11 @@ li a {
   color: black;
 }
 
+.logo-picture {
+  width: 100%;
+}
+
 .logo-banner {
-  background-image: url("../../images/logo-banner.jpg");
-  height: 358px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   position: relative;
 }
 
@@ -101,11 +100,81 @@ main {
   padding: 0;
 }
 
+#hamburger-menu,
+.fas {
+  display: none;
+}
+
 /* footer */
+
+/* media queries */
 
 .end-banner {
   background-image: url("../../images/guitar-roger.jpg");
   height: 143px;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@media only screen and (max-width: 1300px) {
+  body {
+    max-width: 1000px;
+  }
+
+  h1 {
+    position: absolute;
+    left: 9%;
+    font-size: 34px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    max-width: 800px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+  }
+
+  nav {
+    display: none;
+  }
+
+  #hamburger-menu:checked ~ nav {
+    display: block;
+  }
+
+  .fas {
+    display: block;
+    float: right;
+    margin: 20px 20px;
+  }
+
+  #hamburger-menu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  body {
+  }
+
+  .logo-picture {
+    display: none;
+  }
+
+  .logo-banner {
+    background-image: url("../../images/logo-banner.jpg");
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  h1 {
+    left: 60px;
+    bottom: 40px;
+    font-size: 34px;
+  }
 }

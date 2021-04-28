@@ -1,0 +1,31 @@
+<!--let numberText = document.querySelectorAll(".numbertext");
+console.log(numberText);
+
+var prev = document.querySelector(".prev");
+prev.addEventListener("click", plusSlides(-1));
+
+var next = document.querySelector(".next");
+next.addEventListener("click", plusSlides(1));
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+
+function plusSlides(n) {
+showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+/* function currentSlide(n) {
+showSlides(slideIndex = n);
+}*/
+
+function showSlides(n) {
+var y;
+var slides = document.getElementsByClassName("mySlides");
+console.log(slides.length);
+console.log(n);
+if (n > slides.length) {slideIndex = 1}
+if (n < 1) {slideIndex=slides.length} for (x=0; x < slides.length; x++) { slides[x].style.display="none" ; }
+    slides[slideIndex-1].style.display="block" ;-->

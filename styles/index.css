@@ -1,1 +1,28 @@
 @import "imports/general.css";
+
+.mySlides {
+  margin: 20px;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  top: 50%;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+}
+
+.image {
+  width: 50%;
+}
