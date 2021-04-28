@@ -4,11 +4,9 @@ const fadeOne = document.querySelector(".fade1");
 const fadeTwo = document.querySelector(".fade2");
 const fadeThree = document.querySelector(".fade3");
 const slideShowContainer = document.querySelector(".slideshow-container");
-const slides = document.querySelectorAll(".mySlides");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
 
-
- console.log(slides);
- console.log(slides.length);
 
  /*
 const fullUrl = "https://noroffcors.herokuapp.com/" + url;
@@ -26,25 +24,24 @@ async function blogList() {
 
         for(let i = 0; i < 3; i++) {
 
-        fadeOne.innerHTML += `<div>
+        fadeOne.innerHTML += `<div class="blocks">
                                 <img src="images/guitar-roger.jpg" class="image">
                                 <div class="numbertext">${i} / 9</div>
                             </div>
                             `
 
-        fadeTwo.innerHTML += `<div>
+        fadeTwo.innerHTML += `<div class="blocks">
                                 <img src="images/guitar-roger.jpg" class="image">
                                 <div class="numbertext">${i + 3} / 9</div>
                             </div>
                             `
 
-        fadeThree.innerHTML += `<div>
+        fadeThree.innerHTML += `<div class="blocks">
                                 <img src="images/guitar-roger.jpg" class="image">
                                 <div class="numbertext">${i + 6} / 9</div>
                             </div>
                             `
 
-console.log(slides[i]);
                             
 
         
@@ -81,3 +78,34 @@ console.log(slides[i]);
 blogList();
 
 console.log(slideShowContainer);
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+
+function showSlides(n) {
+    var i;
+    var slides = document.querySelectorAll(".mySlides");
+
+ console.log(slides);
+ console.log(slides.length);
+
+ if (n > slides.length) {slideIndex = 1}
+ if (n < 1) {slideIndex = slides.length}
+ console.log(n);
+for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+}
+
+console.log(slides[slideIndex-1]);
+slides[slideIndex-1].style.display = "block";
+
+}
+
+/* prev/next functionality */
+
+prev.addEventListener("click", function() {showSlides(slideIndex -= 1);});
+next.addEventListener("click", function() {showSlides(slideIndex += 1);});
+
+
+

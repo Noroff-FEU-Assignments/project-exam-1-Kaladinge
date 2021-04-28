@@ -2,12 +2,19 @@
 
 .mySlides {
   margin: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.blocks {
+  display: inline-block;
 }
 
 .slideshow-container {
-  max-width: 1000px;
+  width: 95%;
   position: relative;
   margin: auto;
+  border: 1px solid red;
 }
 
 .prev,
