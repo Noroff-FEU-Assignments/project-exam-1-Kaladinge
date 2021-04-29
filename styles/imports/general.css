@@ -93,11 +93,16 @@ nav {
   cursor: pointer;
 }
 
+.mobile-search {
+  display: none;
+}
+
 /* main */
 
 main {
   margin: 0;
   padding: 0;
+  margin: 60px auto;
 }
 
 #hamburger-menu,
@@ -159,6 +164,27 @@ footer {
   #hamburger-menu {
     display: none;
   }
+
+  .mobile-search {
+    display: block;
+    top: 205px;
+    right: 40px;
+  }
+
+  .mobile-search button {
+    background-color: #f4eeeb;
+  }
+
+  .logo-picture {
+    display: none;
+  }
+
+  .logo-banner {
+    background-image: url("../../images/logo-banner.jpg");
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -169,9 +195,19 @@ footer {
     display: none;
   }
 
+  .mobile-search {
+    display: block;
+    top: 205px;
+    right: 40px;
+  }
+
+  .mobile-search button {
+    background-color: #f4eeeb;
+  }
+
   .logo-banner {
     background-image: url("../../images/logo-banner.jpg");
-    height: 100px;
+    height: 200px;
     background-repeat: no-repeat;
     background-size: cover;
   }

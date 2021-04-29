@@ -1,0 +1,31 @@
+@import "imports/general.css";
+
+main {
+  width: 95%;
+  border: 1px solid black;
+}
+
+#profile-pic {
+  float: right;
+  margin: 20px;
+}
+
+.mobile-search {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .mobile-search {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #profile-pic {
+    display: none;
+  }
+
+  #mobile {
+    display: block;
+  }
+}

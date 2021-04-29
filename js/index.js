@@ -7,7 +7,6 @@ const slideShowContainer = document.querySelector(".slideshow-container");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 
-
  /*
 const fullUrl = "https://noroffcors.herokuapp.com/" + url;
 
