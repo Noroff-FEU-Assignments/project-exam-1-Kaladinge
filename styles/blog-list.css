@@ -21,3 +21,53 @@ li a {
 h2 {
   margin: 0 50px;
 }
+
+.blog-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px 40px;
+}
+
+.image {
+  width: 100%;
+}
+
+.blocks {
+  padding: 20px;
+  position: relative;
+}
+
+.left {
+  margin: 0;
+}
+
+.right {
+  text-align: right;
+}
+
+.numbertext {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: white;
+  padding: 5px 10px;
+}
+
+.more-posts {
+  text-decoration: underline;
+  margin: 0 50px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .blog-container {
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 40px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .blog-container {
+    grid-template-columns: 1fr;
+    margin: 10px 40px;
+  }
+}

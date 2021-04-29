@@ -19,7 +19,7 @@ async function fetchApi(url) {
 
             console.log(json);
             
-            body.innerHTML = `<div>${json[0].content.rendered}</div>`
+            body.innerHTML = `<div class="content">${json[0].content.rendered}</div>`
 
 
         // Validate Buttons visibility
