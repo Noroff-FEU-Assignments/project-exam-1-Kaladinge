@@ -13,7 +13,10 @@ async function blogList() {
 
         for(let i = 0; i < 9; i++) {
 
+        
+
         blogContainer.innerHTML += `<div class="blocks">
+                                <a href="index.html">
                                 <img src="${results[i].images[0].src}" class="image">
                                 <div class="numbertext">${i + 1} / 9</div>
                                 <h2 class="left">${results[i].name}</h2>
@@ -21,6 +24,7 @@ async function blogList() {
                                 <p class="right">${results[i].attributes[0].options}</p>
                                 <p class="right">${results[i].attributes[1].options}</p>
                                 <p class="left">${results[i].description}</p>
+                                </a>
                             </div>
                             `
 }

@@ -13,7 +13,8 @@ const buttonNext = document.querySelector("#button-next");
 async function fetchApi(url) {
     try {
         const data = await fetch(
-            url + `posts`
+            url + `posts?_embed
+            `
         );
         const json = await data.json();
 
