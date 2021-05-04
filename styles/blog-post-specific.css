@@ -1,0 +1,57 @@
+@import "imports/general.css";
+
+.wp-content {
+  text-align: center;
+  border: 1px solid black;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.picture {
+  border: 1px solid red;
+  margin: auto;
+}
+
+.picture {
+  text-align: center;
+}
+
+figure img {
+  width: 80%;
+  height: 80%;
+}
+
+.size-medium {
+  max-width: 200px;
+  float: left;
+}
+
+.second-float figure img {
+  float: right;
+}
+
+.picture {
+  width: 80%;
+}
+
+.heading {
+  border: 1px solid red;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.inline {
+}
+
+.author {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+  .picture {
+  }
+}

@@ -1,32 +1,31 @@
-const url = "https://larsingeprojects.one/guitarrr/wp-json/wc/v3/products?consumer_key=ck_1ed6953e7f13254a2789044c94bcbfb3c487803b&consumer_secret=cs_a9ec019056d7323f7e06dacbcd741cb8962864cf";
 const morePosts = document.querySelector(".more-posts");
-
 const blogContainer = document.querySelector(".blog-container");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 
-async function blogList() {
+const apiUrl = "https://larsingeprojects.one/guitarrr/wp-json/wp/v2/";
+
+async function blogList(url) {
     try {
-        const response = await fetch(url);
+        const response = await fetch(url + `posts?per_page=10&_embed`);
         const results = await response.json();
         console.log(results);
 
-        for(let i = 0; i < 9; i++) {
+        var n = 0;
 
-        
+        for(let i = 0; i < 10; i++) {
+
+        n += 1;
 
         blogContainer.innerHTML += `<div class="blocks">
-                                <a href="index.html">
-                                <img src="${results[i].images[0].src}" class="image">
-                                <div class="numbertext">${i + 1} / 9</div>
-                                <h2 class="left">${results[i].name}</h2>
-                                <p class="left">${results[i].categories[0].name}</p>
-                                <p class="right">${results[i].attributes[0].options}</p>
-                                <p class="right">${results[i].attributes[1].options}</p>
-                                <p class="left">${results[i].description}</p>
-                                </a>
-                            </div>
-                            `
+                                <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
+                                <div class="numbertext">${n} / 12</div>
+                                <h2 class="left">${results[i].title.rendered}</h2>
+                                <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
+                                <p class="right">${results[i].date}</p>
+                                <p class="right">${results[i]._embedded.author[0].name}</p>
+                                <p class="left">${results[i].excerpt.rendered}</p></a>
+                                </div>`
 }
 }
     catch(error) {
@@ -34,12 +33,9 @@ async function blogList() {
     }
 }
 
+blogList(apiUrl);
 
-blogList();
-
-
-
-function showSlides(n) {
+/*function showSlides(n) {
     var i;
     var slides = document.querySelectorAll(".mySlides");
 
@@ -56,42 +52,38 @@ for (i = 0; i < slides.length; i++) {
 console.log(slides[slideIndex-1]);
 slides[slideIndex-1].style.display = "block";
 
-}
+}*/
 
 var n = 10;
 
-morePosts.onclick = async function addPosts() {
-    console.log("hello");
 
-    console.log(event);
+morePosts.onclick = async function addPosts() {
+   
 
      try {
-        const response = await fetch(url);
+        const response = await fetch(apiUrl + `posts?per_page=2&offset=${n}&_embed`);
         const results = await response.json();
         console.log(results);
 
         for(let i = 0; i < 3; i++) {
 
+        n = n + 1;
+
         blogContainer.innerHTML += `<div class="blocks">
-                                <img src="${results[i].images[0].src}" class="image">
-                                <div class="numbertext">${i + 1} / 9</div>
-                                <h2 class="left">${results[i].name}</h2>
-                                <p class="left">${results[i].categories[0].name}</p>
-                                <p class="right">${results[i].attributes[0].options}</p>
-                                <p class="right">${results[i].attributes[1].options}</p>
-                                <p class="left">${results[i].description}</p>
-                            </div>
-                            `
-    n = n + 1;
+                                <a href="index.html"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
+                                <div class="numbertext">${n} / 12</div>
+                                <h2 class="left">${results[i].title.rendered}</h2>
+                                <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
+                                <p class="right">${results[i].date}</p>
+                                <p class="right">${results[i]._embedded.author[0].name}</p>
+                                <p class="left">${results[i].excerpt.rendered}</p></a>
+                                </div>`
+    
     console.log(n);
         }
     } catch(error) {
         console.log(error);
     }    
 }
-
-
-    
-  
 
 /*morePosts.addEventListener("click", addPosts());*/
