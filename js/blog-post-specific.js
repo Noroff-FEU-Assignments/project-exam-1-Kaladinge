@@ -1,6 +1,9 @@
 const title = document.querySelector("title");
 const body = document.querySelector("body");
 const slideShow = document.querySelector(".slideshow-container");
+const modal = document.getElementById("myModal");
+const modalImg = document.getElementById("img01");
+
 
 const queryString = document.location.search;
 
@@ -37,7 +40,24 @@ async function fetchApi(url) {
 
             console.log(json.content.rendered);
 
+            const images = document.querySelectorAll("figure .size-medium");
+            console.log(images);
 
+            images.forEach(function(image) {   
+                image.onclick = function showModal() {
+                   console.log(image);
+                    modal.style.display = "block";
+                    modalImg.src = image.src;
+                }
+                
+                
+            });
+
+        //images[0].addEventListener = ("click", function frog() {console.log("frog");})
+
+             
+
+            
 
 
     } catch (error) {
@@ -46,4 +66,7 @@ async function fetchApi(url) {
 };
 
 fetchApi(apiUrl);
+
+const images = document.querySelectorAll("img");
+            console.log(images);
 
