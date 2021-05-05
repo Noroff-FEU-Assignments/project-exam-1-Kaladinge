@@ -3,6 +3,8 @@ const body = document.querySelector("body");
 const slideShow = document.querySelector(".slideshow-container");
 const modal = document.getElementById("myModal");
 const modalImg = document.getElementById("img01");
+const closeButton = document.getElementsByClassName("close")[0];
+const captionText = document.getElementById("caption");
 
 
 const queryString = document.location.search;
@@ -40,7 +42,7 @@ async function fetchApi(url) {
 
             console.log(json.content.rendered);
 
-            const images = document.querySelectorAll("figure .size-medium");
+            const images = document.querySelectorAll("figure img");
             console.log(images);
 
             images.forEach(function(image) {   
@@ -48,7 +50,19 @@ async function fetchApi(url) {
                    console.log(image);
                     modal.style.display = "block";
                     modalImg.src = image.src;
+                    captionText.innerHTML = image.alt;
+                    console.log(captionText);
                 }
+
+            closeButton.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                modal.style.display = "none";
+                }
+            };
                 
                 
             });

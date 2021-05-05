@@ -61,7 +61,7 @@ figure img {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: brown;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal-content {
@@ -75,10 +75,50 @@ figure img {
   position: absolute;
   top: 15px;
   right: 15px;
+  color: white;
   font-size: 50px;
   font-weight: bold;
-  transition: 0.3s;
+  transition: 0.2s;
 }
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.close:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+figure img {
+  cursor: pointer;
+}
+
+/* Animation */
+
+.modal-content,
+#caption {
+  animation-name: zoom;
+  animation-duration: 0.4s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/*Media Queries*/
 
 @media only screen and (max-width: 800px) {
   .picture {
