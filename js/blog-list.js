@@ -13,16 +13,27 @@ async function blogList(url) {
 
         var n = 0;
 
+        console.log(results[0].date)
+
         for(let i = 0; i < 10; i++) {
 
         n += 1;
 
+        const formatDate = new Date(results[i].date).toLocaleString("en-GB", {
+                        day: "numeric",
+                        month: "numeric",
+                        year: "numeric",
+
+        });
+
+        console.log(formatDate);
+
         blogContainer.innerHTML += `<div class="blocks">
-                                <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
+                                <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image" alt="${results[i]._embedded['wp:featuredmedia']['0'].alt_text}">
                                 <div class="numbertext">${n} / 12</div>
                                 <h2 class="left">${results[i].title.rendered}</h2>
                                 <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
-                                <p class="right">${results[i].date}</p>
+                                <p class="right">${formatDate}</p>
                                 <p class="right">${results[i]._embedded.author[0].name}</p>
                                 <p class="left">${results[i].excerpt.rendered}</p></a>
                                 </div>`
@@ -70,7 +81,7 @@ morePosts.onclick = async function addPosts() {
         n = n + 1;
 
         blogContainer.innerHTML += `<div class="blocks">
-                                <a href="index.html"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
+                                <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
                                 <div class="numbertext">${n} / 12</div>
                                 <h2 class="left">${results[i].title.rendered}</h2>
                                 <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
