@@ -63,6 +63,10 @@ a {
   color: black;
 }
 
+.author {
+  text-transform: uppercase;
+}
+
 @media only screen and (max-width: 1000px) {
   .blog-container {
     grid-template-columns: 1fr 1fr;

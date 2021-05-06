@@ -7,14 +7,22 @@
 
 .blocks {
   display: inline-block;
-  border: 1px solid black;
-  margin: 0 25px;
+  border: 1px solid purple;
+  margin: 0px 40px;
   width: 300px;
+  position: relative;
+}
+
+.numbertext {
+  position: absolute;
+  top: 0px;
+  right: 00px;
+  background-color: white;
+  padding: 5px 10px;
 }
 
 .slideshow-container {
   width: 95%;
-  position: relative;
   margin: 0 auto;
   border: 1px solid red;
   text-align: center;
@@ -34,22 +42,69 @@ h2 {
   text-align: right;
 }
 
+main {
+  position: relative;
+}
+
 .prev,
-.next {
+.next,
+.prev-mobile,
+.next-mobile {
   cursor: pointer;
   position: absolute;
   top: 200px;
   user-select: none;
 }
 
-.prev {
+.prev,
+.prev-mobile {
   left: 0;
 }
 
-.next {
+.next,
+.next-mobile {
   right: 0;
+}
+
+.next-mobile,
+.prev-mobile {
+  display: none;
 }
 
 .image {
   width: 100%;
+}
+
+.slideshow-mobile-container {
+  display: none;
+}
+
+@media only screen and (max-width: 1300px) {
+  .blocks {
+    margin: 0px 6px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .blocks {
+    margin: 0px 10px;
+    width: 230px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .slideshow-mobile-container {
+    display: block;
+  }
+
+  .slideshow-container,
+  .prev,
+  .next {
+    display: none;
+  }
+
+  .next-mobile,
+  .prev-mobile {
+    display: block;
+  }
 }

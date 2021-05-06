@@ -116,6 +116,10 @@ footer {
   margin-top: 50px;
 }
 
+.author {
+  text-transform: uppercase;
+}
+
 /* media queries */
 
 .end-banner {

@@ -46,6 +46,7 @@ async function fetchApi(url) {
             console.log(images);
 
             images.forEach(function(image) {   
+                
                 image.onclick = function showModal() {
                    console.log(image);
                     modal.style.display = "block";

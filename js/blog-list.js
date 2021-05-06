@@ -14,6 +14,7 @@ async function blogList(url) {
         var n = 0;
 
         console.log(results[0].date)
+        /*console.log(results[0]._embedded.author[0].name[2]);*/
 
         for(let i = 0; i < 10; i++) {
 
@@ -34,7 +35,7 @@ async function blogList(url) {
                                 <h2 class="left">${results[i].title.rendered}</h2>
                                 <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
                                 <p class="right">${formatDate}</p>
-                                <p class="right">${results[i]._embedded.author[0].name}</p>
+                                <p class="right author">${results[i]._embedded.author[0].name}</p>
                                 <p class="left">${results[i].excerpt.rendered}</p></a>
                                 </div>`
 }
