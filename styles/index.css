@@ -2,21 +2,21 @@
 
 .mySlides {
   margin: 20px 0px;
-  border: 1px solid black;
 }
 
 .blocks {
   display: inline-block;
-  border: 1px solid purple;
-  margin: 0px 40px;
+  margin: 0px 30px;
+  padding: 10px 10px;
   width: 300px;
   position: relative;
+  background-color: #d5cdc8;
 }
 
 .numbertext {
   position: absolute;
   top: 0px;
-  right: 00px;
+  right: 0px;
   background-color: white;
   padding: 5px 10px;
 }
@@ -24,22 +24,27 @@
 .slideshow-container {
   width: 95%;
   margin: 0 auto;
-  border: 1px solid red;
   text-align: center;
 }
 
 h2 {
-  border: 1px solid black;
-  min-height: 120px;
+  min-height: 90px;
+  margin: 0 0px;
 }
 
 .left {
   text-align: left;
-  border: 1px solid black;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .right {
   text-align: right;
+  margin: 0;
 }
 
 main {
@@ -58,12 +63,16 @@ main {
 
 .prev,
 .prev-mobile {
-  left: 0;
+  left: 20px;
 }
 
 .next,
 .next-mobile {
-  right: 0;
+  right: 20px;
+}
+
+.arrow {
+  width: 50px;
 }
 
 .next-mobile,
@@ -73,22 +82,54 @@ main {
 
 .image {
   width: 100%;
+  border-radius: 5%;
 }
 
 .slideshow-mobile-container {
   display: none;
 }
 
+footer {
+  background-color: #d5cdc8;
+}
+
+.band-container {
+  position: relative;
+  text-align: center;
+  border-top: 1px solid #d5cdc8;
+  padding: 20px;
+}
+
+.band {
+  width: 70%;
+}
+
+h3 {
+  position: absolute;
+  top: 20px;
+  right: 30%;
+  color: white;
+}
+
 @media only screen and (max-width: 1300px) {
   .blocks {
     margin: 0px 6px;
+    width: 250px;
+  }
+
+  h2 {
+    min-height: 120px;
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .blocks {
     margin: 0px 10px;
-    width: 230px;
+    width: 200px;
+  }
+
+  h2 {
+    min-height: 150px;
   }
 }
 
@@ -106,5 +147,9 @@ main {
   .next-mobile,
   .prev-mobile {
     display: block;
+  }
+
+  .band {
+    width: 100%;
   }
 }
