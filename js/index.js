@@ -41,8 +41,8 @@ async function blogList(url) {
                                 <div class="numbertext">${i + 1} / 12</div>
                                 <h2 class="left">${results[i].title.rendered}</h2>
                                 <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
-                                <p class="right">${formatDate}</p>
-                                <p class="right author">${results[i]._embedded.author[0].name}</p></a>
+                                <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
+                                <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i]._embedded.author[0].name}</p></a>
                                 </div>`
                             
 
@@ -51,8 +51,8 @@ async function blogList(url) {
                                 <div class="numbertext">${i + 4} / 12</div>
                                 <h2 class="left">${results[i + 3].title.rendered}</h2>
                                 <p class="left">${results[i + 3]._embedded['wp:term']['0']['0'].name}</p>
-                                <p class="right">${results[i + 3].date}</p>
-                                <p class="right author">${results[i + 3]._embedded.author[0].name}</p></a>
+                                <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
+                                <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i + 3]._embedded.author[0].name}</p></a>
                                 </div>`
                             
 
@@ -61,17 +61,17 @@ async function blogList(url) {
                                 <div class="numbertext">${i + 7} / 12</div>
                                 <h2 class="left">${results[i + 6].title.rendered}</h2>
                                 <p class="left">${results[i + 6]._embedded['wp:term']['0']['0'].name}</p>
-                                <p class="right">${results[i + 6].date}</p>
-                                <p class="right author">${results[i + 6]._embedded.author[0].name}</p></a>
+                                <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
+                                <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i + 6]._embedded.author[0].name}</p></a>
                                 </div>`
 
         fadeFour.innerHTML += `<div class="blocks">
-                                <img src="${results[i + 9]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
+                                <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i + 9]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
                                 <div class="numbertext">${i + 10} / 12</div>
                                 <h2 class="left">${results[i + 9].title.rendered}</h2>
                                 <p class="left">${results[i + 9]._embedded['wp:term']['0']['0'].name}</p>
-                                <p class="right">${results[i + 9].date}</p>
-                                <p class="right author">${results[i + 9]._embedded.author[0].name}</p>
+                                <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
+                                <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i + 9]._embedded.author[0].name}</p></a>
                                 </div>`
 
         
@@ -79,14 +79,20 @@ async function blogList(url) {
     }
 
         for(let i = 0; i < 12; i++) {
-                mobileSlides[i].innerHTML += `<div class="blocks">
-                                                <img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
+
+            const formatDate = new Date(results[i].date).toLocaleString("en-GB", {
+                        day: "numeric",
+                        month: "numeric",
+                        year: "numeric",
+
+        });
+                mobileSlides[i].innerHTML += `<div class="blocks blocks-mobile">
+                                                <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
                                                 <div class="numbertext">${i + 1} / 12</div>
                                                 <h2 class="left">${results[i].title.rendered}</h2>
                                                 <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
-                                                <p class="right">${results[i].date}</p>
-                                                <p class="right author">${results[i]._embedded.author[0].name}</p>
-                                                <p class="left">${results[i].excerpt.rendered}</p>
+                                                <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
+                                                <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i]._embedded.author[0].name}</p></a>
                                                 </div>
                                                     `
             

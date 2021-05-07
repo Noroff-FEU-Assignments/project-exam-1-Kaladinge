@@ -159,10 +159,25 @@ footer {
 
 @media only screen and (max-width: 800px) {
   body {
+    position: relative;
   }
 
   nav {
     display: none;
+    position: relative;
+    animation: move 0.7s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes move {
+    from {
+      top: -100px;
+      opacity: 0.1;
+    }
+    to {
+      top: 0px;
+      opacity: 1;
+    }
   }
 
   #hamburger-menu:checked ~ nav {
@@ -171,8 +186,29 @@ footer {
 
   .fas {
     display: block;
-    float: right;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    border-radius: 30%;
+    padding: 10px;
+    font-size: 30px;
     margin: 20px 20px;
+  }
+
+  ul {
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  li {
+    float: none;
+  }
+
+  li a {
+    color: black;
+    text-align: center;
   }
 
   #hamburger-menu {

@@ -18,12 +18,7 @@
             <img src="images/logo-banner.jpg" class="logo-picture" alt="guitarrr logo">
         </div>
     </a>
-    <div class="search-container mobile-search">
-        <form action="/action_page.php">
-            <!--<input type="text" placeholder="Search..." name="search">-->
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
+   
     <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
     <input type="checkbox" id="hamburger-menu">
     <nav>
@@ -59,7 +54,7 @@
         <a class="next"><img src="images/arrowright.png" class="arrow"></a></a>
 
       
-
+        <!-- Mobile -->
         <div class="slideshow-mobile-container">
             <div class="mobileSlides"></div>
             <div class="mobileSlides"></div>
@@ -76,13 +71,16 @@
 
         </div>
 
-        <button class="prev-mobile" onclick="showSlidesMobile(slideIndexMobile -= 1)">&#10094;</button>
-        <button class="next-mobile" onclick="showSlidesMobile(slideIndexMobile += 1)">&#10095;</button>
+        <a class="prev-mobile" onclick="showSlidesMobile(slideIndexMobile -= 1)"><img src="images/arrowleft.png" class="arrow"></a>
+        <a class="next-mobile" onclick="showSlidesMobile(slideIndexMobile += 1)"><img src="images/arrowright.png" class="arrow"></a>
        
-    <div class="band-container">
+    <a href="contact.html>"><div class="band-container">
+        <div id="black"></div>
         <img src="images/band.jpg" class="band" alt="Band playing">
-        <h3>Hello</h3>
-    </div>
+        <h3 id="topic-text">Any quesstions?
+            Contact me!
+        </h3>
+    </div></a>
 
     </main>
     <footer>
