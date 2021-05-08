@@ -9,6 +9,7 @@ const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const prevMobile = document.querySelector(".prev-mobile");
 const nextMobile = document.querySelector(".next-mobile");
+const slides = document.querySelectorAll("mySlides");
 
 
 const apiUrl =
@@ -26,6 +27,8 @@ async function blogList(url) {
         const response = await fetch(url + `posts?per_page=12&_embed`);
         const results = await response.json();
         console.log(results);
+
+        fadeOne.innerHTML = "";
 
         for(let i = 0; i < 3; i++) {
 

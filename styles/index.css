@@ -64,6 +64,17 @@ main {
   position: absolute;
   top: 200px;
   user-select: none;
+  transition-duration: 0.3s;
+}
+
+.next:hover,
+.next-mobile:hover {
+  right: 15px;
+}
+
+.prev:hover,
+.prev-mobile:hover {
+  left: 15px;
 }
 
 .prev,
@@ -115,6 +126,26 @@ footer {
   right: 17%;
   color: white;
   width: 20%;
+}
+
+/* loader */
+
+#guitar {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.load-container {
+  height: 400px;
+  margin-top: 150px;
 }
 
 @media only screen and (max-width: 1300px) {
