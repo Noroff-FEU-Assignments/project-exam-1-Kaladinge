@@ -41,7 +41,14 @@ figure img {
   position: relative;
 }
 
-.inline {
+.date,
+.author {
+  color: rgb(111, 109, 109);
+}
+
+.icon {
+  width: 15px;
+  margin-right: 5px;
 }
 
 .author {
@@ -101,6 +108,10 @@ figure img {
   cursor: pointer;
 }
 
+footer {
+  margin-top: 200px;
+}
+
 /* Animation */
 
 .modal-content,
@@ -116,6 +127,28 @@ figure img {
   to {
     transform: scale(1);
   }
+}
+
+/* loader */
+
+#guitar {
+  animation: spin 2s linear infinite;
+  width: 200px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.load-container {
+  height: 400px;
+  text-align: center;
+  margin-top: 100px;
 }
 
 /*Media Queries*/

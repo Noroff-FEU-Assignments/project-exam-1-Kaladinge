@@ -21,12 +21,7 @@
             <img src="images/logo-banner.jpg" class="logo-picture" alt="guitarrr logo">
         </div>
     </a>
-    <div class="search-container mobile-search">
-        <form action="/action_page.php">
-            <!--<input type="text" placeholder="Search..." name="search">-->
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
+   
     <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
     <input type="checkbox" id="hamburger-menu">
     <nav>
@@ -44,9 +39,12 @@
         </div>
     </nav>
     <main>
-
-        <!-- Slideshow container-->
+        <p class="nav-info"><a href="index.html" class="nav-info-link">Home</a>/Blog List</p>
+        <!-- Specific blog-post -->
         <div class="slideshow-container">
+            <div class="load-container">
+                <img src="images/guitar-blue.png" alt="loader-image" id="guitar">
+            </div>
         </div>
 
         <!-- Modal-->
@@ -55,12 +53,27 @@
             <img class="modal-content" id="img01">
             <div id="caption"></div>
         </div>
-
-        <h2>hallo</h2>
-        <p>hei ja</p>
     </main>
     <footer>
-        <div class="end-banner">
+        <div class="footer-box">
+            <a href="about.html" class="footer-links">
+                <p>About us</p>
+            </a>
+            <a href="contact.html" class="footer-links">
+                <p>Subscribe</p>
+            </a>
+        </div>
+        <div>
+            <a href="#"><img src="images/guitar-roger.jpg" class="end-banner" alt="guitar roger"></a>
+        </div>
+        <div class="footer-box">
+            <p>On social media:</p>
+            <a href="https://nb-no.facebook.com" class="social-links"><img src="images/facebook.svg" class="social-media"
+                    alt="facebook"></a>
+            <a href="https://www.youtube.com" class="social-links"><img src="images/youtube.svg" class="social-media"
+                    alt="youtube"><a>
+            <a href="https://www.snapchat.com" class="social-links"><img src="images/snapchat.svg" class="social-media"
+                    alt="snapchat"></a>
         </div>
     </footer>
     <script src="js/blog-post-specific.js"></script>

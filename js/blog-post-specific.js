@@ -23,6 +23,13 @@ async function fetchApi(url) {
         const data = await fetch(url + `/?_embed`);
         const json = await data.json();
 
+        const formatDate = new Date(json.date).toLocaleString("en-GB", {
+                        day: "numeric",
+                        month: "numeric",
+                        year: "numeric",
+
+        });
+
         console.log(json);
 
         title.innerHTML = json.title.rendered;
@@ -31,8 +38,8 @@ async function fetchApi(url) {
                                         <div class="heading">
                                             <h2>${json.title.rendered}</h2>
                                             <hr>
-                                            <p class="inline date">${json.date}</p>
-                                            <p class="inline author">${json._embedded.author[0].name}</p>
+                                            <p class="date"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
+                                            <p class="author"><img src="images/person.svg" alt="person-icon" class="icon">${json._embedded.author[0].name}</p></a>
                                         </div>
                                         <div class="wp-content">${json.content.rendered}</div>
                                     </div>`

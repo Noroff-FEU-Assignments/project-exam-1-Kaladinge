@@ -43,6 +43,17 @@ h2 {
 
 .right {
   text-align: right;
+  margin: 0;
+  color: rgb(111, 109, 109);
+}
+
+.category {
+  color: rgb(111, 109, 109);
+}
+
+.icon {
+  width: 15px;
+  margin-right: 5px;
 }
 
 .numbertext {
@@ -55,7 +66,12 @@ h2 {
 
 .more-posts {
   text-decoration: underline;
-  margin: 0 50px;
+  height: 60px;
+  margin-top: 150px;
+  text-decoration: none;
+  font-size: large;
+  background-color: #d5cdc8;
+  cursor: pointer;
 }
 
 a {
@@ -67,10 +83,37 @@ a {
   text-transform: uppercase;
 }
 
+/* loader */
+
+#guitar {
+  animation: spin 2s linear infinite;
+  width: 200px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.load-container {
+  height: 400px;
+  text-align: center;
+  margin-top: 100px;
+  width: 300%;
+}
+
 @media only screen and (max-width: 1000px) {
   .blog-container {
     grid-template-columns: 1fr 1fr;
     margin: 10px 40px;
+  }
+
+  .load-container {
+    width: 200%;
   }
 }
 
@@ -78,5 +121,9 @@ a {
   .blog-container {
     grid-template-columns: 1fr;
     margin: 10px 40px;
+  }
+
+  .load-container {
+    width: 100%;
   }
 }

@@ -104,12 +104,23 @@ nav {
   display: none;
 }
 
+.nav-info {
+  margin-left: 20px;
+  font-style: italic;
+  color: grey;
+}
+
+.nav-info-link {
+  color: grey;
+  text-decoration: underline;
+}
+
 /* main */
 
 main {
   margin: 0;
   padding: 0;
-  margin: 60px auto;
+  border: 1px solid black;
 }
 
 #hamburger-menu,
@@ -121,17 +132,36 @@ main {
 
 footer {
   margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #d5cdc8;
+}
+
+.social-media {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.social-media:hover {
+}
+
+.footer-box {
+  margin-top: 20px;
+}
+
+.footer-links {
+  text-decoration: underline;
+  color: black;
+}
+
+.footer-links:hover {
+  color: white;
+  background-color: white;
 }
 
 .author {
   text-transform: uppercase;
-}
-
-.end-banner {
-  background-image: url("../../images/guitar-roger.jpg");
-  height: 143px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 /* media queries */
@@ -267,5 +297,11 @@ footer {
     left: 60px;
     bottom: 40px;
     font-size: 34px;
+  }
+
+  footer {
+    flex-direction: column;
+    border: 1px solid black;
+    text-align: center;
   }
 }

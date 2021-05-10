@@ -11,6 +11,8 @@ async function blogList(url) {
         const results = await response.json();
         console.log(results);
 
+        blogContainer.innerHTML = "";
+
         var n = 0;
 
         console.log(results[0].date)
@@ -33,11 +35,55 @@ async function blogList(url) {
                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image" alt="${results[i]._embedded['wp:featuredmedia']['0'].alt_text}">
                                 <div class="numbertext">${n} / 12</div>
                                 <h2 class="left">${results[i].title.rendered}</h2>
-                                <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
-                                <p class="right">${formatDate}</p>
-                                <p class="right author">${results[i]._embedded.author[0].name}</p>
+                                <p class="left category">${results[i]._embedded['wp:term']['0']['0'].name}</p>
+                                <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
+                                <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i]._embedded.author[0].name}</p></a>
                                 <p class="left">${results[i].excerpt.rendered}</p></a>
                                 </div>`
+        }
+        blogContainer.innerHTML += `<button class="more-posts">Show more blog posts>></button>`
+
+        const morePosts = document.querySelector(".more-posts");
+
+        var n = 10;
+
+        morePosts.onclick = async function addPosts() {
+   
+
+     try {
+        const response = await fetch(apiUrl + `posts?per_page=2&offset=${n}&_embed`);
+        const results = await response.json();
+        console.log(results);
+
+
+        morePosts.style.display = "none";
+
+        for(let i = 0; i < 3; i++) {
+
+        const formatDate = new Date(results[i].date).toLocaleString("en-GB", {
+                        day: "numeric",
+                        month: "numeric",
+                        year: "numeric",
+
+        });
+            
+        n = n + 1;
+
+        blogContainer.innerHTML += `<div class="blocks">
+                                <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
+                                <div class="numbertext">${n} / 12</div>
+                                <h2 class="left">${results[i].title.rendered}</h2>
+                                <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
+                                <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
+                                <p class="right">${results[i]._embedded.author[0].name}</p>
+                                <p class="left">${results[i].excerpt.rendered}</p></a>
+                                </div>`
+    
+    console.log(n);
+        }
+    } catch(error) {
+        console.log(error);
+    }    
 }
 }
     catch(error) {
@@ -47,27 +93,8 @@ async function blogList(url) {
 
 blogList(apiUrl);
 
-/*function showSlides(n) {
-    var i;
-    var slides = document.querySelectorAll(".mySlides");
 
- console.log(slides);
- console.log(slides.length);
-
- if (n > slides.length) {slideIndex = 1}
- if (n < 1) {slideIndex = slides.length}
- console.log(n);
-for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-}
-
-console.log(slides[slideIndex-1]);
-slides[slideIndex-1].style.display = "block";
-
-}*/
-
-var n = 10;
-
+/*var n = 10;
 
 morePosts.onclick = async function addPosts() {
    
@@ -86,7 +113,7 @@ morePosts.onclick = async function addPosts() {
                                 <div class="numbertext">${n} / 12</div>
                                 <h2 class="left">${results[i].title.rendered}</h2>
                                 <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
-                                <p class="right">${results[i].date}</p>
+                                <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
                                 <p class="right">${results[i]._embedded.author[0].name}</p>
                                 <p class="left">${results[i].excerpt.rendered}</p></a>
                                 </div>`
@@ -96,6 +123,6 @@ morePosts.onclick = async function addPosts() {
     } catch(error) {
         console.log(error);
     }    
-}
+}*/
 
 /*morePosts.addEventListener("click", addPosts());*/

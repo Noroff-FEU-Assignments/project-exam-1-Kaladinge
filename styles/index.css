@@ -2,6 +2,7 @@
 
 .mySlides {
   margin: 20px 0px;
+  border: 1px solid black;
 }
 
 .blocks {
@@ -11,6 +12,7 @@
   width: 300px;
   position: relative;
   background-color: #d5cdc8;
+  vertical-align: text-top;
 }
 
 .numbertext {
@@ -28,7 +30,6 @@
 }
 
 h2 {
-  min-height: 90px;
   margin: 0 0px;
 }
 
@@ -45,6 +46,11 @@ a {
 .right {
   text-align: right;
   margin: 0;
+  color: rgb(111, 109, 109);
+}
+
+.category {
+  color: rgb(111, 109, 109);
 }
 
 .icon {
@@ -105,10 +111,6 @@ main {
   display: none;
 }
 
-footer {
-  background-color: #d5cdc8;
-}
-
 .band-container {
   position: relative;
   text-align: center;
@@ -132,6 +134,7 @@ footer {
 
 #guitar {
   animation: spin 2s linear infinite;
+  width: 200px;
 }
 
 @keyframes spin {
@@ -153,20 +156,12 @@ footer {
     margin: 0px 6px;
     width: 250px;
   }
-
-  h2 {
-    min-height: 120px;
-  }
 }
 
 @media only screen and (max-width: 1000px) {
   .blocks {
     margin: 0px 10px;
     width: 200px;
-  }
-
-  h2 {
-    min-height: 150px;
   }
 }
 
@@ -191,10 +186,6 @@ footer {
     border: 1px solid black;
     margin: auto;
     width: 60%;
-  }
-
-  h2 {
-    min-height: 0;
   }
 
   .band {

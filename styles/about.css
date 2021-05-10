@@ -1,8 +1,9 @@
 @import "imports/general.css";
 
-main {
-  width: 95%;
-  border: 1px solid black;
+.content {
+  width: 800px;
+  margin: 0 auto;
+  max-width: 95%;
 }
 
 #profile-pic {

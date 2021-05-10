@@ -15,13 +15,6 @@ const slides = document.querySelectorAll("mySlides");
 const apiUrl =
     "https://larsingeprojects.one/guitarrr/wp-json/wp/v2/";
 
-
-
-const buttonPrevious = document.querySelector("#button-previous");
-const buttonNext = document.querySelector("#button-next");
-
-
-
 async function blogList(url) {
     try {
         const response = await fetch(url + `posts?per_page=12&_embed`);
@@ -43,7 +36,7 @@ async function blogList(url) {
                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
                                 <div class="numbertext">${i + 1} / 12</div>
                                 <h2 class="left">${results[i].title.rendered}</h2>
-                                <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
+                                <p class="left category">${results[i]._embedded['wp:term']['0']['0'].name}</p>
                                 <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
                                 <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i]._embedded.author[0].name}</p></a>
                                 </div>`
@@ -53,7 +46,7 @@ async function blogList(url) {
                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i + 3]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
                                 <div class="numbertext">${i + 4} / 12</div>
                                 <h2 class="left">${results[i + 3].title.rendered}</h2>
-                                <p class="left">${results[i + 3]._embedded['wp:term']['0']['0'].name}</p>
+                                <p class="left category">${results[i + 3]._embedded['wp:term']['0']['0'].name}</p>
                                 <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
                                 <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i + 3]._embedded.author[0].name}</p></a>
                                 </div>`
@@ -63,7 +56,7 @@ async function blogList(url) {
                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i + 6]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
                                 <div class="numbertext">${i + 7} / 12</div>
                                 <h2 class="left">${results[i + 6].title.rendered}</h2>
-                                <p class="left">${results[i + 6]._embedded['wp:term']['0']['0'].name}</p>
+                                <p class="left category">${results[i + 6]._embedded['wp:term']['0']['0'].name}</p>
                                 <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
                                 <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i + 6]._embedded.author[0].name}</p></a>
                                 </div>`
@@ -72,7 +65,7 @@ async function blogList(url) {
                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i + 9]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
                                 <div class="numbertext">${i + 10} / 12</div>
                                 <h2 class="left">${results[i + 9].title.rendered}</h2>
-                                <p class="left">${results[i + 9]._embedded['wp:term']['0']['0'].name}</p>
+                                <p class="left category">${results[i + 9]._embedded['wp:term']['0']['0'].name}</p>
                                 <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
                                 <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i + 9]._embedded.author[0].name}</p></a>
                                 </div>`
@@ -93,7 +86,7 @@ async function blogList(url) {
                                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
                                                 <div class="numbertext">${i + 1} / 12</div>
                                                 <h2 class="left">${results[i].title.rendered}</h2>
-                                                <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
+                                                <p class="left category">${results[i]._embedded['wp:term']['0']['0'].name}</p>
                                                 <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
                                                 <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i]._embedded.author[0].name}</p></a>
                                                 </div>
