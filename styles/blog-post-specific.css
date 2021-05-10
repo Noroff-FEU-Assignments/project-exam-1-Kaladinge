@@ -3,17 +3,17 @@
 .wp-content {
   text-align: center;
   border: 1px solid black;
-  width: 95%;
+  width: 900px;
+  max-width: 95%;
   margin: 0 auto;
 }
 
-.picture {
-  border: 1px solid red;
-  margin: auto;
+p {
+  text-align: left;
 }
 
 .picture {
-  text-align: center;
+  margin: auto;
 }
 
 figure img {
@@ -22,12 +22,14 @@ figure img {
 }
 
 .size-medium {
-  max-width: 200px;
+  width: 200px;
   float: left;
+  margin-right: 20px;
 }
 
 .second-float figure img {
   float: right;
+  margin-left: 20px;
 }
 
 .picture {
@@ -35,8 +37,9 @@ figure img {
 }
 
 .heading {
-  border: 1px solid red;
-  max-width: 500px;
+  border: 1px solid #f4eeeb;
+  width: 500px;
+  max-width: 95%;
   margin: 0 auto;
   position: relative;
 }
@@ -52,7 +55,6 @@ figure img {
 }
 
 .author {
-  text-align: right;
   position: absolute;
   right: 0;
   bottom: 0px;
@@ -108,10 +110,6 @@ figure img {
   cursor: pointer;
 }
 
-footer {
-  margin-top: 200px;
-}
-
 /* Animation */
 
 .modal-content,
@@ -154,6 +152,13 @@ footer {
 /*Media Queries*/
 
 @media only screen and (max-width: 800px) {
-  .picture {
+  figure img {
+    width: 100%;
+  }
+
+  .size-medium,
+  .second-float figure img {
+    float: none;
+    width: 80%;
   }
 }

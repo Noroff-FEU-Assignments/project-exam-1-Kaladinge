@@ -130,6 +130,10 @@ main {
   width: 20%;
 }
 
+.search-container input {
+  display: none;
+}
+
 /* loader */
 
 #guitar {
