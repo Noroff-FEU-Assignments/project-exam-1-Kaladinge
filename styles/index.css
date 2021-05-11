@@ -30,6 +30,30 @@
   margin-left: 10px;
 }
 
+.dot-container,
+.dot-container-mobile {
+  text-align: center;
+}
+
+.dot-container-mobile {
+  display: none;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin: 0 3px;
+  background-color: brown;
+  display: inline-block;
+}
+
+.active-dot,
+.dot:hover {
+  background-color: black;
+}
+
 .mySlides {
   margin: 20px 0px;
   border: 1px solid black;
@@ -215,6 +239,10 @@ main {
     display: none;
   }
 
+  .dot-container {
+    display: none;
+  }
+
   .next-mobile,
   .prev-mobile {
     display: block;
@@ -248,5 +276,9 @@ main {
   .info-text {
     margin: 40px auto 40px auto;
     max-width: 80%;
+  }
+
+  .dot-container-mobile {
+    display: block;
   }
 }

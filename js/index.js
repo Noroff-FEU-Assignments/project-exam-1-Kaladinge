@@ -11,6 +11,8 @@ const prevMobile = document.querySelector(".prev-mobile");
 const nextMobile = document.querySelector(".next-mobile");
 const slides = document.querySelectorAll("mySlides");
 
+var dots = document.querySelectorAll(".dot-container .dot");
+var mobileDots = document.querySelectorAll(".dot-container-mobile .dot");
 
 const apiUrl =
     "https://larsingeprojects.one/guitarrr/wp-json/wp/v2/";
@@ -107,30 +109,44 @@ console.log(slideShowContainer);
 var slideIndex = 1;
 showSlides(slideIndex);
 
+/*function currentSlide(n) {
+  showSlides(slideIndex = n);
+}*/
+
 
 function showSlides(n) {
     
     var i;
     var slides = document.querySelectorAll(".mySlides");
     
-    var length = slides.length;
+    
+    var slideLength = slides.length;
+    var dotLength = dots.length;
 
-    console.log(length);
+    console.log(slideLength);
 
  console.log(slides);
- console.log(length);
+ console.log(slideLength);
 
- if (n > length) {slideIndex = 1}
- if (n < 1) {slideIndex = length}
+ if (n > slideLength) {slideIndex = 1}
+ if (n < 1) {slideIndex = slideLength}
  console.log(n);
-for (i = 0; i < length; i++) {
+for (i = 0; i < slideLength; i++) {
     slides[i].style.display = "none";
 }
 
-console.log(slides[slideIndex-1]);
-slides[slideIndex-1].style.display = "block";
-
+for (i = 0; i < dotLength; i++) {
+    dots[i].className = dots[i].className.replace(" active-dot", "");
 }
+
+console.log(slides[slideIndex-1]);
+dots[slideIndex-1].className += " active-dot";
+slides[slideIndex-1].style.display = "block";
+}
+
+dots.forEach(function(dot, number) {   
+                dot.onclick = function() {showSlides(slideIndex = number + 1);}
+                  });
 
 /* mobile function */
 
@@ -140,30 +156,33 @@ showSlidesMobile(slideIndexMobile);
 function showSlidesMobile(m) {
 
     var lengthy = 12;
+    var dotLength = mobileDots.length;
 
     if (m > lengthy) {slideIndexMobile = 1}
     if (m < 1) {slideIndexMobile = lengthy}
     console.log(m);
+ 
     for (i = 0; i < lengthy; i++) {
     mobileSlides[i].style.display = "none";
 }
 
-    for (i = 0; i < lengthy; i++) {
-    mobileSlides[i].style.display = "none";
+for (i = 0; i < dotLength; i++) {
+    mobileDots[i].className = mobileDots[i].className.replace(" active-dot", "");
 }
+
+    mobileDots[slideIndexMobile-1].className += " active-dot";
     mobileSlides[slideIndexMobile-1].style.display = "block";
-    console.log(mobileContainer.length);
-    console.log(mobileSlides.length);
 }
 
+mobileDots.forEach(function(dot, number) {   
+                dot.onclick = function() {showSlidesMobile(slideIndexMobile = number + 1);}
+                  });
 
 
 /* prev/next functionality */
 
 prev.addEventListener("click", function() {showSlides(slideIndex -= 1);});
 next.addEventListener("click", function() {showSlides(slideIndex += 1);});
-/*prevMobile.addEventListener("click", function() {showSlidesMobile(slideIndexMobile -= 1);});*/
-/*nextMobile.addEventListener("click", function() {showSlidesMobile(slideIndexMobile += 1);});*/
 
 
 
