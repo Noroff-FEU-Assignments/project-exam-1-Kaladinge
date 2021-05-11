@@ -1,10 +1,15 @@
+/* For API */
 const title = document.querySelector("title");
 const body = document.querySelector("body");
 const slideShow = document.querySelector(".slideshow-container");
+const blogType = document.querySelector(".nav-info span");
+
+/* For Modal */
 const modal = document.getElementById("myModal");
 const modalImg = document.getElementById("img01");
 const closeButton = document.getElementsByClassName("close")[0];
 const captionText = document.getElementById("caption");
+
 
 
 const queryString = document.location.search;
@@ -43,11 +48,8 @@ async function fetchApi(url) {
                                         </div>
                                         <div class="wp-content">${json.content.rendered}</div>
                                     </div>`
-                                    
-            const picture = document.querySelector(".picture");
-            console.log(picture);
 
-            console.log(json.content.rendered);
+            blogType.innerHTML = json._embedded['wp:term']['0']['0'].name;
 
             const images = document.querySelectorAll("figure img");
             console.log(images);
@@ -70,17 +72,10 @@ async function fetchApi(url) {
                 if (event.target === modal) {
                 modal.style.display = "none";
                 }
-            };
-                
-                
+            };   
             });
 
         //images[0].addEventListener = ("click", function frog() {console.log("frog");})
-
-             
-
-            
-
 
     } catch (error) {
         console.log(error);

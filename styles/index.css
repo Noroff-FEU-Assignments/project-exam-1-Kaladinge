@@ -1,5 +1,35 @@
 @import "imports/general.css";
 
+.info-text {
+  text-align: center;
+  margin: 40px 0 40px 0;
+}
+
+.info-text span {
+  position: relative;
+}
+
+.info-text span:before,
+.info-text span:after {
+  content: "";
+  position: absolute;
+  height: 7px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  top: 5px;
+  width: 200px;
+}
+
+.info-text span:before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.info-text span:after {
+  left: 100%;
+  margin-left: 10px;
+}
+
 .mySlides {
   margin: 20px 0px;
   border: 1px solid black;
@@ -30,7 +60,7 @@
 }
 
 h2 {
-  margin: 0 0px;
+  margin: 0 50px;
 }
 
 .left {
@@ -167,6 +197,11 @@ main {
     margin: 0px 10px;
     width: 200px;
   }
+
+  .info-text span:before,
+  .info-text span:after {
+    width: 150px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -199,5 +234,19 @@ main {
   #topic-text {
     right: 12%;
     top: 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .info-text span:before,
+  .info-text span:after {
+    display: none;
+  }
+
+  .info-text {
+    margin: 40px auto 40px auto;
+    max-width: 80%;
   }
 }

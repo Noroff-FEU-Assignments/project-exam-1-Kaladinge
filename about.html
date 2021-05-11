@@ -21,12 +21,7 @@
             <img src="images/logo-banner.jpg" class="logo-picture" alt="guitarrr logo">
         </div>
     </a>
-        <div class="search-container mobile-search">
-            <form action="/action_page.php">
-                <!--<input type="text" placeholder="Search..." name="search">-->
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
+        
         <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
         <input type="checkbox" id="hamburger-menu">
     <nav>
@@ -37,15 +32,17 @@
             <li><a href="contact.html">CONTACT</a></li>
         </ul>
         <div class="search-container">
-            <form action="/action_page.php">
+            <form action="">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit" class="search"><i class="fa fa-search"></i></button>
                 <!--<input type="text" placeholder="Search..." name="search">-->
-                <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </nav>
     <main>
         <p class="nav-info"><a href="index.html" class="nav-info-link">Home</a>/About</p>
-            <div class="content"><image src="images/guitar-roger.jpg" id="profile-pic" alt="profile picture of me"></image>
+            <div class="content">
+                <image src="images/guitar-roger.jpg" id="profile-pic" alt="profile picture of me"></image>
                 <div class="text">
                     <p>For those who don’t remember what I said on the home page, I will be so kind as to say it again:
                     «You like guitars you say?! This blog site if for you.» For those who are satisified with this description and want to
@@ -87,7 +84,7 @@
                             alt="snapchat"></a>
         </div>
     </footer>
-    <script src="js/index.js"></script>
+    <script src="js/search.js"></script>
 </body>
 
 </html>

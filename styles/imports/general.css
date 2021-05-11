@@ -87,7 +87,7 @@ nav {
   padding: 6px 2px;
   margin-top: 5px;
   font-size: 18px;
-  background-color: black;
+  background-color: grey;
   color: white;
   float: left;
 }
@@ -114,6 +114,10 @@ nav {
 .nav-info-link {
   color: grey;
   text-decoration: underline;
+}
+
+.search-container input {
+  display: none;
 }
 
 /* main */
@@ -186,17 +190,11 @@ footer {
 @media only screen and (max-width: 1000px) {
   body {
     max-width: 800px;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  body {
     position: relative;
   }
 
   nav {
     display: none;
-    position: relative;
     animation: move 0.7s;
     animation-fill-mode: forwards;
   }
@@ -220,7 +218,7 @@ footer {
     display: block;
     position: absolute;
     top: 60px;
-    right: 0;
+    right: 20px;
     background-color: white;
     border-radius: 30%;
     padding: 10px;
@@ -256,6 +254,12 @@ footer {
   .mobile-search button {
     background-color: #f4eeeb;
   }
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    position: relative;
+  }
 
   .logo-picture {
     display: none;
@@ -275,6 +279,10 @@ footer {
 
   .logo-picture {
     display: none;
+  }
+
+  li a {
+    text-align: left;
   }
 
   .mobile-search {

@@ -1,23 +1,5 @@
 @import "imports/general.css";
 
-.list {
-  list-style: disc;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  width: 250px;
-  border: 1px solid black;
-}
-
-.list li {
-  float: none;
-}
-
-li a {
-  display: block;
-  text-decoration: underline;
-}
-
 h2 {
   margin: 0 50px;
 }
