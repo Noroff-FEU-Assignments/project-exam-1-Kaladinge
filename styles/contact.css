@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-html {
-  background-color: #d3cdca;
-}
-
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -15,7 +11,7 @@ html {
 
 main form {
   padding: 2em;
-  background: white;
+  background: #f8f8f8;
   border-radius: 1rem;
   position: relative;
 }

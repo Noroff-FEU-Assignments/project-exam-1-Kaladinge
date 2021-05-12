@@ -36,43 +36,40 @@ async function blogList(url) {
 
         fadeOne.innerHTML += `<div class="blocks">
                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
-                                <div class="numbertext">${i + 1} / 12</div>
-                                <h2 class="left">${results[i].title.rendered}</h2>
-                                <p class="left category">${results[i]._embedded['wp:term']['0']['0'].name}</p>
+                                <div class="numbertext">${results[i]._embedded['wp:term']['0']['0'].name}</div>
+                                <h2 class="left post-header">${results[i].title.rendered}</h2>
                                 <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
-                                <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i]._embedded.author[0].name}</p></a>
+                                <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i]._embedded.author[0].name}</p>
+                                </a>
                                 </div>`
                             
 
         fadeTwo.innerHTML += `<div class="blocks">
                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i + 3]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
-                                <div class="numbertext">${i + 4} / 12</div>
-                                <h2 class="left">${results[i + 3].title.rendered}</h2>
-                                <p class="left category">${results[i + 3]._embedded['wp:term']['0']['0'].name}</p>
+                                <div class="numbertext">${results[i + 3]._embedded['wp:term']['0']['0'].name}</div>
+                                <h2 class="left post-header">${results[i + 3].title.rendered}</h2>
                                 <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
-                                <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i + 3]._embedded.author[0].name}</p></a>
+                                <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i + 3]._embedded.author[0].name}</p>
+                                </a>
                                 </div>`
                             
 
         fadeThree.innerHTML += `<div class="blocks">
                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i + 6]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
-                                <div class="numbertext">${i + 7} / 12</div>
-                                <h2 class="left">${results[i + 6].title.rendered}</h2>
-                                <p class="left category">${results[i + 6]._embedded['wp:term']['0']['0'].name}</p>
+                                <div class="numbertext">${results[i + 6]._embedded['wp:term']['0']['0'].name}</div>
+                                <h2 class="left post-header">${results[i + 6].title.rendered}</h2>
                                 <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
                                 <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i + 6]._embedded.author[0].name}</p></a>
                                 </div>`
 
         fadeFour.innerHTML += `<div class="blocks">
                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i + 9]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
-                                <div class="numbertext">${i + 10} / 12</div>
-                                <h2 class="left">${results[i + 9].title.rendered}</h2>
-                                <p class="left category">${results[i + 9]._embedded['wp:term']['0']['0'].name}</p>
+                                <div class="numbertext">${results[i + 9]._embedded['wp:term']['0']['0'].name}</div>
+                                <h2 class="left post-header">${results[i + 9].title.rendered}</h2>
                                 <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
                                 <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i + 9]._embedded.author[0].name}</p></a>
                                 </div>`
 
-        
 
     }
 
@@ -86,9 +83,8 @@ async function blogList(url) {
         });
                 mobileSlides[i].innerHTML += `<div class="blocks blocks-mobile">
                                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
-                                                <div class="numbertext">${i + 1} / 12</div>
+                                                <div class="numbertext">${results[i]._embedded['wp:term']['0']['0'].name}</div>
                                                 <h2 class="left">${results[i].title.rendered}</h2>
-                                                <p class="left category">${results[i]._embedded['wp:term']['0']['0'].name}</p>
                                                 <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
                                                 <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results[i]._embedded.author[0].name}</p></a>
                                                 </div>

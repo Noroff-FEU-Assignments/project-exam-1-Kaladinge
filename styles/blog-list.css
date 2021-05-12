@@ -17,6 +17,7 @@ h2 {
 .blocks {
   padding: 20px;
   position: relative;
+  background-color: #f8f8f8;
 }
 
 .left {
@@ -107,5 +108,13 @@ a {
 
   .load-container {
     width: 100%;
+  }
+
+  .blocks {
+    padding: 0;
+  }
+
+  .blog-container {
+    margin: 10px 20px;
   }
 }

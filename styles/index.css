@@ -56,7 +56,6 @@
 
 .mySlides {
   margin: 20px 0px;
-  border: 1px solid black;
 }
 
 .blocks {
@@ -65,15 +64,15 @@
   padding: 10px 10px;
   width: 300px;
   position: relative;
-  background-color: #d5cdc8;
+  background-color: #f8f8f8;
   vertical-align: text-top;
 }
 
 .numbertext {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  background-color: white;
+  bottom: 0px;
+  left: 0px;
+  background-color: #f8f8f8;
   padding: 5px 10px;
 }
 
@@ -85,6 +84,10 @@
 
 h2 {
   margin: 0 50px;
+}
+
+.post-header {
+  min-height: 112px;
 }
 
 .left {
@@ -122,7 +125,7 @@ main {
 .next-mobile {
   cursor: pointer;
   position: absolute;
-  top: 200px;
+  top: 350px;
   user-select: none;
   transition-duration: 0.3s;
 }
@@ -165,23 +168,42 @@ main {
   display: none;
 }
 
-.band-container {
+.band-container2 {
+  background-image: url("../images/band2.jpg");
+  height: 450px;
+  background-size: cover;
+  width: 100%;
+  margin: 40px auto;
   position: relative;
-  text-align: center;
-  border-top: 1px solid #d5cdc8;
-  padding-top: 20px;
 }
 
-.band {
-  width: 70%;
-}
-
-#topic-text {
+#topic-text2,
+#news,
+#lessons,
+#personal {
   position: absolute;
-  top: 30px;
-  right: 17%;
   color: white;
-  width: 20%;
+}
+
+#topic-text2 {
+  text-transform: uppercase;
+  right: 20%;
+  top: 10px;
+}
+
+#news {
+  left: 15%;
+  top: 50%;
+}
+
+#lessons {
+  left: 45%;
+  top: 55%;
+}
+
+#personal {
+  top: 30%;
+  right: 10%;
 }
 
 .search-container input {
@@ -214,6 +236,10 @@ main {
     margin: 0px 6px;
     width: 250px;
   }
+
+  .post-header {
+    min-height: 150px;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -226,20 +252,23 @@ main {
   .info-text span:after {
     width: 150px;
   }
-}
 
-@media only screen and (max-width: 800px) {
   .slideshow-mobile-container {
     display: block;
   }
 
-  .slideshow-container,
-  .prev,
-  .next {
+  .slideshow-container {
     display: none;
   }
 
-  .dot-container {
+  .blocks-mobile {
+    display: block;
+    margin: 20px auto;
+    width: 65%;
+  }
+
+  .prev,
+  .next {
     display: none;
   }
 
@@ -248,24 +277,36 @@ main {
     display: block;
   }
 
-  .blocks-mobile {
+  .dot-container-mobile {
     display: block;
-    border: 1px solid black;
-    margin: auto;
-    width: 60%;
   }
 
-  .band {
-    width: 100%;
-  }
-
-  #topic-text {
-    right: 12%;
-    top: 0;
+  .dot-container {
+    display: none;
   }
 
   h2 {
     text-align: center;
+  }
+
+  .next-mobile {
+    right: 10px;
+  }
+
+  .prev-mobile {
+    left: 10px;
+  }
+
+  .next-mobile:hover {
+    right: 0px;
+  }
+
+  .prev-mobile:hover {
+    left: 0px;
+  }
+
+  .band-container2 {
+    height: 300px;
   }
 
   .info-text span:before,
@@ -278,7 +319,10 @@ main {
     max-width: 80%;
   }
 
-  .dot-container-mobile {
-    display: block;
+  #personal {
+    right: 13%;
+    top: 20%;
+    border: 1px solid white;
+    max-width: 100px;
   }
 }
