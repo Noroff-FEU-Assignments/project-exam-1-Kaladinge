@@ -98,9 +98,10 @@ blogList(apiUrl);
 /* Filter Functionality */
 function presentCategory(event) {
 
-    if (event.target.value === "Archive") {
+    if (event.target.value === "archive") {
         blogList(apiUrl);
-    }
+        
+    } if (event.target.value !== "archive") {
 
     console.log(event.target.value);
     const categoryInfo = `https://larsingeprojects.one/guitarrr/wp-json/wp/v2/categories?slug=${event.target.value}`;
@@ -142,8 +143,10 @@ function presentCategory(event) {
 
 }
 }
+    
 
 categoryList();
+}
 }
 
 selectCategory.addEventListener("change", presentCategory);
