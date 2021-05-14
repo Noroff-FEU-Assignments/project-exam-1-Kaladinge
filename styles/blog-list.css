@@ -1,7 +1,13 @@
 @import "imports/general.css";
 
-h2 {
-  margin: 0 50px;
+#blog-post-header,
+.content select {
+  display: inline-block;
+  margin: 10px 50px;
+}
+
+.content select {
+  font-size: 20px;
 }
 
 .blog-container {

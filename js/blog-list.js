@@ -3,6 +3,8 @@ const blogContainer = document.querySelector(".blog-container");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 
+const selectCategory = document.querySelector(".content select");
+
 const apiUrl = "https://larsingeprojects.one/guitarrr/wp-json/wp/v2/";
 
 async function blogList(url) {
@@ -44,8 +46,6 @@ async function blogList(url) {
         blogContainer.innerHTML += `<button class="more-posts">Show more blog posts>></button>`
 
         const morePosts = document.querySelector(".more-posts");
-
-        var n = 10;
 
         morePosts.onclick = async function addPosts() {
    
@@ -93,6 +93,60 @@ async function blogList(url) {
 
 blogList(apiUrl);
 
+
+
+/* Filter Functionality */
+function presentCategory(event) {
+
+    if (event.target.value === "Archive") {
+        blogList(apiUrl);
+    }
+
+    console.log(event.target.value);
+    const categoryInfo = `https://larsingeprojects.one/guitarrr/wp-json/wp/v2/categories?slug=${event.target.value}`;
+
+    async function categoryList() {
+        const responseId = await fetch(categoryInfo);
+        const resultsId = await responseId.json();
+        const categoryId = resultsId[0].id;
+        console.log(categoryId);
+
+        const categoryPosts = `https://larsingeprojects.one/guitarrr/wp-json/wp/v2/posts?categories=${categoryId}&_embed`;
+        const response = await fetch(categoryPosts);
+        const results = await response.json();
+        console.log(results);
+
+        blogContainer.innerHTML = "";
+        var n = 0;
+
+        for(i = 0; i < results.length; i++) {
+
+        n += 1;
+
+        const formatDate = new Date(results[i].date).toLocaleString("en-GB", {
+                        day: "numeric",
+                        month: "numeric",
+                        year: "numeric",
+
+        });
+
+        blogContainer.innerHTML += `<div class="blocks">
+                                <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
+                                <div class="numbertext">${n} / 12</div>
+                                <h2 class="left">${results[i].title.rendered}</h2>
+                                <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
+                                <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
+                                <p class="right">${results[i]._embedded.author[0].name}</p>
+                                <p class="left">${results[i].excerpt.rendered}</p></a>
+                                </div>`
+
+}
+}
+
+categoryList();
+}
+
+selectCategory.addEventListener("change", presentCategory);
 
 /*var n = 10;
 
