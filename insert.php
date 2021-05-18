@@ -1,18 +1,42 @@
 <?php
-$name = $_POST['name'];
-$email = $_POST['email'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
+$fullName = $_POST['name'];
+$Email = $_POST['email'];
+$titleSubject = $_POST['subject'];
+$fullMessage = $_POST['message'];
 
-if (!empty($name) || !empty($email) || !empty($subject) || !empty($message)) {
-    $host = "larsingeprojects.one.mysql";
+/*if (!empty($name) || !empty($email) || !empty($subject) || !empty($message)) {*/
+    $host = "10.27.18.48";
     $dbUsername = "larsingeprojects_oneprojects";
     $dbPassword = "1Buckethead";
-    $dbname = "larsingeprojects_oneprojects";
+    /*$dbname = "larsingeprojects_oneprojects";*/
 
     // create connection
-    $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
+$conn = mysqli_connect($host, $dbUsername, $dbPassword/*, $dbname*/);
 
+    if(!$conn)
+    {
+        echo 'Not connected';
+    }
+
+    if(!mysqli_select_db($conn,'larsingeprojects_oneprojects'))
+    {
+        echo 'Database not selected'
+    }
+
+    $sql = "INSERT INTO contact (fullName,Email,titleSubject,fullMessage) VALUES ('$fullName','$Email','$titleSubject','$fullMessage')";
+
+    if(!mysqli_query($conn,$sql))
+    {
+        echo 'Not inserted';
+    }
+    else 
+    {
+        echo 'Inserted';
+    }
+
+    header("refresh:2; url=contact.html");
+
+    /*
     if (mysqli_connect_error()) {
         die('Connect Error('. mysqli_connect_error().')'. mysqli_connect_error());
     } else {
@@ -44,4 +68,5 @@ if (!empty($name) || !empty($email) || !empty($subject) || !empty($message)) {
     echo "All fields are required";
     die();
 }
-?>
+?>*/
+    ?>
