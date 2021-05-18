@@ -56,4 +56,4 @@ function emailCheck(emailAddress) {
     return patternMatches;
 }
 
-form.addEventListener("submit", validateForm);
+//form.addEventListener("submit", validateForm);
