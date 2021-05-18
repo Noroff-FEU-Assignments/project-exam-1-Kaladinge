@@ -1,7 +1,7 @@
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("larsingeprojects.one.mysql", "larsingeprojects_oneprojects", "1Buckethead", " larsingeprojects_oneprojects");
+$link = mysqli_connect("larsingeprojects.one.mysql", "larsingeprojects_oneprojects", "1Buckethead", "larsingeprojects_oneprojects");
  
 // Check connection
 if($link === false){
@@ -15,7 +15,7 @@ $full_subject = mysqli_real_escape_string($link, $_REQUEST['full_subject']);
 $full_message = mysqli_real_escape_string($link, $_REQUEST['full_message']);
  
 // Attempt insert query execution
-$sql = "INSERT INTO persons (full_name, email, full_subject, full_message) VALUES ('$full_name', '$email', '$full_subject', '$full_message')";
+$sql = "INSERT INTO contact (full_name, email, full_subject, full_message) VALUES ('$full_name', '$email', '$full_subject', '$full_message')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
 } else{
