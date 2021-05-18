@@ -44,3 +44,4 @@ if (!empty($name) || !empty($email) || !empty($subject) || !empty($message)) {
     echo "All fields are required";
     die();
 }
+?>
