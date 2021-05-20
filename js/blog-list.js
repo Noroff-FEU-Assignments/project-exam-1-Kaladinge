@@ -6,6 +6,7 @@ const selectCategory = document.querySelector(".content select");
 
 const apiUrl = "https://larsingeprojects.one/guitarrr/wp-json/wp/v2/";
 
+/* Fetching blogs from API */
 async function blogList(url) {
     try {
         const response = await fetch(url + `posts?per_page=10&_embed`);
@@ -38,7 +39,7 @@ async function blogList(url) {
 
                     for(let i = 0; i < 2; i++) {
             
-                    n = n + 1;
+                    n += 1;
 
                     singleBlog(results[i],n);
 
@@ -55,6 +56,7 @@ async function blogList(url) {
 
 blogList(apiUrl);
 
+/* single blog functionality */
 function singleBlog(results,n) {
 
     const formatDate = new Date(results.date).toLocaleString("en-GB", {
@@ -71,7 +73,7 @@ function singleBlog(results,n) {
                                     <h2 class="left">${results.title.rendered}</h2>
                                     <p class="left">${results._embedded['wp:term']['0']['0'].name}</p>
                                     <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
-                                    <p class="right">${results._embedded.author[0].name}</p>
+                                    <p class="right author">${results._embedded.author[0].name}</p>
                                     <p class="left">${results.excerpt.rendered}</p></a>
                                     </div>`
 }

@@ -1,56 +1,162 @@
-/*const url = "https://larsingeprojects.one/guitarrr/wp-json/wp/v2";*/
-const body = document.querySelector("body");
+const fadeOne = document.querySelector(".fade1");
+const fadeTwo = document.querySelector(".fade2");
+const fadeThree = document.querySelector(".fade3");
+const fadeFour = document.querySelector(".fade4");
+const slideShowContainer = document.querySelector(".slideshow-container");
+const mobileContainer = document.querySelector(".slideshow-mobile-container");
+const mobileSlides = document.querySelectorAll(".mobileSlides");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const prevMobile = document.querySelector(".prev-mobile");
+const nextMobile = document.querySelector(".next-mobile");
+const slides = document.querySelectorAll("mySlides");
+
+var dots = document.querySelectorAll(".dot-container .dot");
+var mobileDots = document.querySelectorAll(".dot-container-mobile .dot");
 
 const apiUrl =
     "https://larsingeprojects.one/guitarrr/wp-json/wp/v2/";
 
-let length = 4;
-let offset = 0;
-
-const buttonPrevious = document.querySelector("#button-previous");
-const buttonNext = document.querySelector("#button-next");
-
-async function fetchApi(url) {
+async function blogList(url) {
     try {
-        const data = await fetch(
-            url + `posts?_embed
-            `
-        );
-        const json = await data.json();
+        const response = await fetch(url + `posts?per_page=12&_embed`);
+        const results = await response.json();
+        console.log(results);
 
-            console.log(json);
+        fadeOne.innerHTML = "";
+
+                    for(let i = 0; i < 3; i++) {
+                        individualCarouselPosts(results[i],fadeOne);
+                    }
+    
+                    for(let i = 3; i < 6; i++) {
+                        individualCarouselPosts(results[i],fadeTwo);
+                    }
+
+                    for(let i = 6; i < 9; i++) {
+                        individualCarouselPosts(results[i],fadeThree);
+                           
+                    }
+
+                    for(let i = 9; i < 12; i++) {
+                        individualCarouselPosts(results[i],fadeFour);
+                    }
+                                    
+        mobileSlides[0].innerHTML = "";
+
+        
+
+        for(let i = 0; i < 12; i++) {
+
+            individualCarouselPosts(results[i],mobileSlides[i],"blocks-mobile");
+
+        }
             
-            body.innerHTML = `<div class="content">${json[0].content.rendered}</div>`
-
-
-        // Validate Buttons visibility
-        if (offset === 0) {
-            buttonPrevious.style.display = "none";
-        } else {
-            buttonPrevious.style.display = "block";
-        }
-        if (json.length < 4) {
-            buttonNext.style.display = "none";
-        } else {
-            buttonNext.style.display = "block";
-        }
-
-
-    } catch (error) {
+    }
+    catch(error) {
         console.log(error);
     }
 }
 
-buttonPrevious.addEventListener("click", () => {
-    if (offset >= 4) {
-        offset -= 4;
-    }
-    fetchApi(apiUrl);
-});
-buttonNext.addEventListener("click", () => {
-    offset += 4;
-    fetchApi(apiUrl);
-});
+blogList(apiUrl);
 
-fetchApi(apiUrl);
 
+/* single post functionality */
+function individualCarouselPosts(results,container,extraClass) {
+                            
+                            const formatDate = new Date(results.date).toLocaleString("en-GB", {
+                                            day: "numeric",
+                                            month: "numeric",
+                                            year: "numeric",
+
+                            });
+
+                            container.innerHTML += `<div class="blocks ${extraClass}">
+                                                    <a href="blog-post-specific.html?id=${results.id}"><img src="${results._embedded['wp:featuredmedia']['0'].source_url}" class="image">
+                                                    <div class="numbertext">${results._embedded['wp:term']['0']['0'].name}</div>
+                                                    <h2 class="left post-header">${results.title.rendered}</h2>
+                                                    <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>
+                                                    <p class="right author"><img src="images/person.svg" alt="person-icon" class="icon">${results._embedded.author[0].name}</p>
+                                                    </a>
+                                                    </div>`
+
+                    }
+
+console.log(slideShowContainer);
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+
+function showSlides(n) {
+    
+    var i;
+    var slides = document.querySelectorAll(".mySlides");
+    
+    
+    var slideLength = slides.length;
+    var dotLength = dots.length;
+
+    console.log(slideLength);
+
+ console.log(slides);
+ console.log(slideLength);
+
+ if (n > slideLength) {slideIndex = 1}
+ if (n < 1) {slideIndex = slideLength}
+ console.log(n);
+for (i = 0; i < slideLength; i++) {
+    slides[i].style.display = "none";
+}
+
+for (i = 0; i < dotLength; i++) {
+    dots[i].className = dots[i].className.replace(" active-dot", "");
+}
+
+console.log(slides[slideIndex-1]);
+dots[slideIndex-1].className += " active-dot";
+slides[slideIndex-1].style.display = "block";
+}
+
+dots.forEach(function(dot, number) {   
+                dot.onclick = function() {showSlides(slideIndex = number + 1);}
+                  });
+
+                  
+/* mobile function */
+var slideIndexMobile = 1;
+showSlidesMobile(slideIndexMobile);
+
+function showSlidesMobile(m) {
+
+    var lengthy = 12;
+    var dotLength = mobileDots.length;
+
+    if (m > lengthy) {slideIndexMobile = 1}
+    if (m < 1) {slideIndexMobile = lengthy}
+    console.log(m);
+ 
+    for (i = 0; i < lengthy; i++) {
+    mobileSlides[i].style.display = "none";
+}
+
+for (i = 0; i < dotLength; i++) {
+    mobileDots[i].className = mobileDots[i].className.replace(" active-dot", "");
+}
+
+    mobileDots[slideIndexMobile-1].className += " active-dot";
+    mobileSlides[slideIndexMobile-1].style.display = "block";
+}
+
+mobileDots.forEach(function(dot, number) {   
+                dot.onclick = function() {showSlidesMobile(slideIndexMobile = number + 1);}
+                  });
+
+
+/* prev/next functionality */
+
+prev.addEventListener("click", function() {showSlides(slideIndex -= 1);});
+next.addEventListener("click", function() {showSlides(slideIndex += 1);});
+prevMobile.addEventListener("click", function() {showSlidesMobile(slideIndexMobile -= 1)});
+nextMobile.addEventListener("click", function() {showSlidesMobile(slideIndexMobile += 1)});
