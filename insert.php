@@ -25,3 +25,53 @@ if(mysqli_query($link, $sql)){
 // Close connection
 mysqli_close($link);
 ?>
+
+<?php
+$full_name = $_POST['full_name'];
+$email = $_POST['email'];
+$full_subject = $_POST['full_subject'];
+$full_message = $_POST['full_message'];
+
+if (!empty($full_name) || !empty($email) || !empty($full_subject) || !empty($full_message)) {
+    $host = "larsingeprojects.one.mysql";
+    $dbUsername = "larsingeprojects_oneprojects";
+    $dbPassword = "1Buckethead";
+    $dbname = "larsingeprojects_oneprojects";
+
+    // create connection
+    $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
+
+    if (mysqli_connect_error()) {
+        die('Connect Error('. mysqli_connect_error().')'. mysqli_connect_error());
+    } else {
+        $SELECT = "SELECT email From contact Where email = ? Limit 1";
+        $INSERT = "INSERT Into contact (full_name, email, full_subject, full_message) values(?, ?, ?, ?)";
+
+
+
+        //Prepare statement
+        $stmt = $conn->prepare($SELECT);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->bind_result($email);
+        $stmt->store_result();
+        $rnum = $stmt->num_rows;
+
+        if ($rnum==0) {
+            $stmt->close();
+
+            $stmt = $conn->prepare($INSERT);
+            $stmt->bind_param("ssss", $full_name, $email, $full_subject, $full_message); 
+            $stmt->execute();
+            echo "New record inserted successfully";
+        } else {
+            echo "Someone already registered using this email";
+        }
+        $stmt->close();
+        $conn->close();
+    }
+} else {
+    echo "All fields are required";
+    die();
+}
+?>

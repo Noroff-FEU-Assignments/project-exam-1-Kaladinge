@@ -56,6 +56,17 @@
 
 .mySlides {
   margin: 20px 0px;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .blocks {
@@ -127,17 +138,17 @@ main {
   position: absolute;
   top: 350px;
   user-select: none;
-  transition-duration: 0.3s;
+  padding: 5px;
+  border-radius: 3px;
+  transition: 0.5s ease;
 }
 
-.next:hover,
-.next-mobile:hover {
-  right: 15px;
+.next:hover {
+  background-color: #edebeb;
 }
 
-.prev:hover,
-.prev-mobile:hover {
-  left: 15px;
+.prev:hover {
+  background-color: #edebeb;
 }
 
 .prev,
@@ -169,12 +180,16 @@ main {
 }
 
 .band-container2 {
-  background-image: url("../images/band2.jpg");
-  height: 450px;
-  background-size: cover;
   width: 100%;
   margin: 40px auto;
   position: relative;
+}
+
+.band-image {
+  width: 100%;
+  height: 420px;
+  object-fit: none;
+  object-position: top;
 }
 
 #topic-text2,
@@ -185,25 +200,20 @@ main {
   color: white;
 }
 
-#topic-text2 {
-  text-transform: uppercase;
-  right: 20%;
-  top: 10px;
-}
-
 #news {
-  left: 15%;
-  top: 50%;
+  left: 16%;
+  top: 20px;
 }
 
 #lessons {
-  left: 45%;
-  top: 55%;
+  left: 48%;
+  top: 0;
 }
 
 #personal {
-  top: 30%;
-  right: 10%;
+  top: 10px;
+  right: 18%;
+  max-width: 100px;
 }
 
 .search-container input {
@@ -228,7 +238,9 @@ main {
 
 .load-container {
   height: 400px;
-  margin-top: 150px;
+  width: 200px;
+  margin: 150px auto;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -239,6 +251,14 @@ main {
 
   .post-header {
     min-height: 150px;
+  }
+
+  #news {
+    left: 5%;
+  }
+
+  #personal {
+    right: 90px;
   }
 }
 
@@ -267,6 +287,20 @@ main {
     width: 65%;
   }
 
+  .mobileSlides {
+    animation-name: fade;
+    animation-duration: 1s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   .prev,
   .next {
     display: none;
@@ -290,23 +324,11 @@ main {
   }
 
   .next-mobile {
-    right: 10px;
+    right: 1%;
   }
 
   .prev-mobile {
-    left: 10px;
-  }
-
-  .next-mobile:hover {
-    right: 0px;
-  }
-
-  .prev-mobile:hover {
-    left: 0px;
-  }
-
-  .band-container2 {
-    height: 300px;
+    left: 1%;
   }
 
   .info-text span:before,
@@ -319,10 +341,31 @@ main {
     max-width: 80%;
   }
 
+  .band-container2 {
+    margin: 0px auto;
+    position: relative;
+  }
+
+  .band-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  #news {
+    top: 5px;
+    font-size: 4vw;
+  }
+
+  #lessons {
+    left: 47%;
+    top: -5px;
+    font-size: 4vw;
+  }
+
   #personal {
-    right: 13%;
-    top: 20%;
-    border: 1px solid white;
-    max-width: 100px;
+    left: 80%;
+    top: 0px;
+    font-size: 4vw;
   }
 }

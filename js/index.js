@@ -73,6 +73,8 @@ async function blogList(url) {
 
     }
 
+        mobileSlides[0].innerHTML = "";
+
         for(let i = 0; i < 12; i++) {
 
             const formatDate = new Date(results[i].date).toLocaleString("en-GB", {
@@ -81,6 +83,8 @@ async function blogList(url) {
                         year: "numeric",
 
         });
+
+
                 mobileSlides[i].innerHTML += `<div class="blocks blocks-mobile">
                                                 <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
                                                 <div class="numbertext">${results[i]._embedded['wp:term']['0']['0'].name}</div>

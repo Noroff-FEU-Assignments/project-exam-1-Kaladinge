@@ -52,16 +52,13 @@ async function fetchApi(url) {
             blogType.innerHTML = json._embedded['wp:term']['0']['0'].name;
 
             const images = document.querySelectorAll("figure img");
-            console.log(images);
 
             images.forEach(function(image) {   
                 
                 image.onclick = function showModal() {
-                   console.log(image);
                     modal.style.display = "block";
                     modalImg.src = image.src;
                     captionText.innerHTML = image.alt;
-                    console.log(captionText);
                 }
 
             closeButton.onclick = function() {
@@ -75,15 +72,10 @@ async function fetchApi(url) {
             };   
             });
 
-        //images[0].addEventListener = ("click", function frog() {console.log("frog");})
-
     } catch (error) {
         console.log(error);
     }
 };
 
 fetchApi(apiUrl);
-
-const images = document.querySelectorAll("img");
-            console.log(images);
 

@@ -78,8 +78,8 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev"><img src="images/arrowleft.png" class="arrow"></a>
-        <a class="next"><img src="images/arrowright.png" class="arrow"></a></a>
+        <a class="prev"><img src="images/left-arrow.png" class="arrow"></a>
+        <a class="next"><img src="images/right-arrow.png" class="arrow"></a>
 
       
         <!-- Slideshow, mobile -->
@@ -99,7 +99,12 @@
         </div>
 
         <div class="slideshow-mobile-container">
-            <div class="mobileSlides"></div>
+            
+            <div class="mobileSlides">
+                <div class="load-container">
+                    <img src="images/guitar.png" alt="loader-image" id="guitar">
+                </div>
+            </div>
             <div class="mobileSlides"></div>
             <div class="mobileSlides"></div>
             <div class="mobileSlides"></div>
@@ -115,13 +120,13 @@
         </div>
 
         <!-- Next and previous buttons, mobile -->
-        <a class="prev-mobile" onclick="showSlidesMobile(slideIndexMobile -= 1)"><img src="images/arrowleft.png" class="arrow"></a>
-        <a class="next-mobile" onclick="showSlidesMobile(slideIndexMobile += 1)"><img src="images/arrowright.png" class="arrow"></a>
+        <a class="prev-mobile" onclick="showSlidesMobile(slideIndexMobile -= 1)"><img src="images/left-arrow.png" class="arrow"></a>
+        <a class="next-mobile" onclick="showSlidesMobile(slideIndexMobile += 1)"><img src="images/right-arrow.png" class="arrow"></a>
     
 
     <a href="blog-list.html">
         <div class="band-container2">
-            <p id="topic-text2"></p>
+            <img src="images/band.jpg" class="band-image">
             <h3 id="news">News</h3>
             <h3 id="lessons">Lessons</h3>
             <h3 id="personal">Personal Articles</h3>

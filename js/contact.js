@@ -8,6 +8,7 @@ const inputMessage = document.querySelector("#message");
 const errorMessage = document.querySelector("#messageError");
 const form = document.querySelector("#contactForm");
 const success = document.querySelector("#success-message");
+const buttons = document.querySelector(".buttons");
 
 
 function validateForm(event) {
@@ -37,8 +38,9 @@ function validateForm(event) {
         errorMessage.style.display = "block";
     }
 
-    if (lenCheck(inputName.value, 0) && lenCheck(inputSubject.value, 10) && emailCheck(inputEmail.value) && lenCheck(inputMessage.value, 25)) {
+    if (lenCheck(inputName.value, 5) && lenCheck(inputSubject.value, 15) && emailCheck(inputEmail.value) && lenCheck(inputMessage.value, 25)) {
         success.style.display = "block";
+        /*buttons.innerHTML = `<p>hello</p>`*/
     }
 }
 
@@ -56,4 +58,6 @@ function emailCheck(emailAddress) {
     return patternMatches;
 }
 
+
 //form.addEventListener("submit", validateForm);
+
