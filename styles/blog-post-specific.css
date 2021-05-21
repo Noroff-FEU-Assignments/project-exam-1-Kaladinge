@@ -102,12 +102,18 @@ figure img {
   text-align: center;
   color: white;
   padding: 10px 0;
-  height: 150px;
 }
 
 .close:hover {
   cursor: pointer;
   color: grey;
+}
+
+main iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-top: 1px solid black;
 }
 
 /* Animation */
