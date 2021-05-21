@@ -1,8 +1,67 @@
 @import "imports/general.css";
 
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+html {
+  background-color: white;
+}
+
+body {
+  margin: -30px auto;
+}
+
+h3 {
+  width: 95%;
+  margin: 0 auto;
+}
+
+#comment {
+  height: 120px;
+}
+
 main form {
   padding: 2em;
-  background: #f8f8f8;
+  background: white;
   border-radius: 1rem;
   position: relative;
+}
+
+main input,
+#comment {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#submit {
+  background-color: #b0aba9;
+  border: none;
+  width: 200px;
+  padding: 1rem;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  border: 1px solid white;
+  font-size: 0.8rem;
+}
+
+#submit:hover {
+  background-color: white;
+  color: #b0aba9;
+  border: 1px solid #b0aba9;
+}
+
+main label {
+  display: block;
+  margin-top: 1rem;
 }
