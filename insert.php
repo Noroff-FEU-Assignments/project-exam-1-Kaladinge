@@ -9,6 +9,33 @@ if($link === false){
 }
  
 // Escape user inputs for security
+$comment_content = mysqli_real_escape_string($link, $_REQUEST['comment_content']);
+$user_nickname = mysqli_real_escape_string($link, $_REQUEST['user_nickname']);
+
+ 
+// Attempt insert query execution
+$sql = "INSERT INTO comment (comment_content, user_nickname) VALUES ('$comment_content', '$user_nickname')";
+if(mysqli_query($link, $sql)){
+    echo "Records added successfully.";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
+ 
+// Close connection
+mysqli_close($link);
+?>
+
+<?php
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$link = mysqli_connect("larsingeprojects.one.mysql", "larsingeprojects_oneprojects", "1Buckethead", "larsingeprojects_oneprojects");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Escape user inputs for security
 $full_name = mysqli_real_escape_string($link, $_REQUEST['full_name']);
 $email = mysqli_real_escape_string($link, $_REQUEST['email']);
 $full_subject = mysqli_real_escape_string($link, $_REQUEST['full_subject']);
@@ -25,6 +52,12 @@ if(mysqli_query($link, $sql)){
 // Close connection
 mysqli_close($link);
 ?>
+
+
+
+
+
+
 
 <?php
 $full_name = $_POST['full_name'];

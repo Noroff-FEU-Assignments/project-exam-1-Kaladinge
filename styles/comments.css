@@ -1,0 +1,8 @@
+@import "imports/general.css";
+
+main form {
+  padding: 2em;
+  background: #f8f8f8;
+  border-radius: 1rem;
+  position: relative;
+}

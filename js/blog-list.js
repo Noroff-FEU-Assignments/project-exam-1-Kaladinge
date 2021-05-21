@@ -46,11 +46,13 @@ async function blogList(url) {
                     }
                 } catch(error) {
                     console.log(error);
+                    blogContainer.innerHTML += showError("Something went wrong.");
                 }    
                 }
     }
     catch(error) {
         console.log(error);
+        blogContainer.innerHTML = showError("Something went wrong.");
     }
 }
 

@@ -118,6 +118,16 @@ nav {
   display: none;
 }
 
+.error {
+  background: red;
+  color: rgb(82, 1, 1);
+  border: 2px solid rgb(82, 1, 1);
+  max-width: 200px;
+  max-height: 50px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
 /* main */
 
 main {

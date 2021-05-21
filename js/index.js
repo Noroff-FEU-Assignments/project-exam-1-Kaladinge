@@ -55,6 +55,7 @@ async function blogList(url) {
     }
     catch(error) {
         console.log(error);
+        slides[0].innerHTML = showError("Something went wrong.");
     }
 }
 

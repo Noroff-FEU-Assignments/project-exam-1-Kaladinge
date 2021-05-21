@@ -74,6 +74,7 @@ async function fetchApi(url) {
 
     } catch (error) {
         console.log(error);
+        slideShow.innerHTML = showError("Something went wrong.");
     }
 };
 

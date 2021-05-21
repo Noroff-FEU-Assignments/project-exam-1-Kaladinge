@@ -53,13 +53,3 @@ main label {
   font-size: 0.9rem;
   margin-top: 2px;
 }
-
-.success {
-  display: none;
-  background-color: rgb(127, 207, 36);
-  color: darkgreen;
-  border: 1px solid darkgreen;
-  padding: 10px;
-  border-radius: 1rem;
-  margin-bottom: 10px;
-}
