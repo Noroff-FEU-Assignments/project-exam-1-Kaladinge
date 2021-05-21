@@ -22,6 +22,7 @@ p {
 figure img {
   width: 80%;
   height: 80%;
+  cursor: zoom-in;
 }
 
 .size-medium {
@@ -30,16 +31,13 @@ figure img {
   margin-right: 20px;
   margin-left: -40px;
   position: relative;
+  cursor: zoom-in;
 }
 
 .second-float figure img {
   float: right;
   margin-left: 20px;
   margin-right: -40px;
-}
-
-.picture {
-  width: 80%;
 }
 
 .heading {
@@ -110,10 +108,6 @@ figure img {
 .close:hover {
   cursor: pointer;
   color: grey;
-}
-
-figure img {
-  cursor: pointer;
 }
 
 /* Animation */

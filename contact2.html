@@ -25,38 +25,10 @@
     </script>
 </head>
 
-<body>
-    <a href="index.html">
-        <div class="logo-banner">
-            <h1>Guitarrr!</h1>
-            <img src="images/logo-banner.jpg" class="logo-picture" alt="guitarrr logo">
-        </div>
-    </a>
-    <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
-    <input type="checkbox" id="hamburger-menu">
-    <nav>
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="blog-list.html">BLOG</a></li>
-            <li><a class="active" href="contact.html">CONTACT</a></li>
-        </ul>
-        <div class="search-container">
-            <form action="/action_page.php">
-                <input type="text" placeholder="Search..." name="search">
-                <button type="submit" class="search"><i class="fa fa-search"></i></button>
-                <!--<input type="text" placeholder="Search..." name="search">-->
-            </form>
-        </div>
-    </nav>
     <main>
-        <p class="nav-info"><a href="index.html" class="nav-info-link">Home</a>/Contact</p>
-        <div class="container">
-            <p>Feel free to ask if you have any questions regarding the content on my site, using the contact form below.
-            I’ll be sure to answer as soon as I can.</p>
-            <iframe src="contact2.html" width="100%" height="560" style="border:none"></iframe>
+        
             <div class="success" id="success-message">The form has been sent successfully</div>
-            <!--<form id="contactForm" action="https://larsingeprojects.one/guitarrr/insert.php" method="POST">
+            <form id="contactForm" action="https://larsingeprojects.one/guitarrr/insert.php" method="POST">
                 <div>
                     <label>
                         Name
@@ -76,7 +48,7 @@
                 <div>
                     <label>
                         Subject
-                        <input type="subject" name="full_subject" id="subject" placeholder="E g. Guitar Tip Videos"/>
+                        <input type="subject" name="full_subject" id="subject" placeholder="Min. 15 characters"/>
                     </label>
                     <div class="form-error" id="subjectError">Please enter a subject</div>
                 </div>
@@ -84,38 +56,17 @@
                 <div>
                     <label>
                         Message
-                        <input type="message" name="full_smessage" id="message" placeholder="Hi! I would like to ask..."/>
+                        <input type="message" name="full_smessage" id="message" placeholder="Min. 25 characters"/>
                     </label>
                     <div class="form-error" id="messageError">Please enter a message</div>
                 </div>
                 <div class="buttons">
                 <button id="submit" type="submit">Submit</button>
                 </div>
-            </form>-->
+            </form>
         </div>
     </main>
-    <footer>
-        <div class="footer-box">
-            <a href="about.html" class="footer-links">
-                <p>About us</p>
-            </a>
-            <a href="contact.html" class="footer-links">
-                <p>Subscribe</p>
-            </a>
-        </div>
-        <div>
-            <a href="#"><img src="images/guitar-roger.jpg" class="end-banner" alt="guitar roger"></a>
-        </div>
-        <div class="footer-box">
-            <p>On social media:</p>
-            <a href="https://nb-no.facebook.com" class="social-links"><img src="images/facebook.svg" class="social-media"
-                    alt="facebook"></a>
-            <a href="https://www.youtube.com" class="social-links"><img src="images/youtube.svg" class="social-media"
-                    alt="youtube"><a>
-                    <a href="https://www.snapchat.com" class="social-links"><img src="images/snapchat.svg" class="social-media"
-                            alt="snapchat"></a>
-        </div>
-    </footer>
+    
     <script src="js/search.js"></script>
     <script src="js/contact.js"></script>
 </body>

@@ -12,7 +12,11 @@ const buttons = document.querySelector(".buttons");
 
 
 function validateForm(event) {
-    event.preventDefault();
+    
+
+    if (lenCheck(inputName.value, 5) === false || !emailCheck(inputEmail.value) || lenCheck(inputSubject.value, 15) === false || lenCheck(inputMessage.value, 25) === false) {
+        event.preventDefault();
+    
 
     if (lenCheck(inputName.value, 5) === true) {
         errorName.style.display = "none";
@@ -38,9 +42,11 @@ function validateForm(event) {
         errorMessage.style.display = "block";
     }
 
+    }
     if (lenCheck(inputName.value, 5) && lenCheck(inputSubject.value, 15) && emailCheck(inputEmail.value) && lenCheck(inputMessage.value, 25)) {
         success.style.display = "block";
         /*buttons.innerHTML = `<p>hello</p>`*/
+    
     }
 }
 
@@ -59,5 +65,5 @@ function emailCheck(emailAddress) {
 }
 
 
-//form.addEventListener("submit", validateForm);
+form.addEventListener("submit", validateForm);
 
