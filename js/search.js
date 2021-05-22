@@ -12,14 +12,5 @@ search.onclick = function searchBar(event) {
 
         searchContainer.action = "/action_page.php";
     }
-   /* window.onclick = function (event) {
-    event.preventDefault();
-    if (event.target !== faSearch && event.target !== searchInput) {
-        console.log("hehe");
-        searchInput.style.display = "none";
-    }
-    
-    console.log(event.target)*/
-
 }
 

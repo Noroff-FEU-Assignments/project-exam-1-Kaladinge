@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A place for all guitar enthusiasts, big and small, to feel at home." />
-    <title>Guitarrr! | Contact Form</title>
+    <meta name="description" content="Contact form for the contact page"/>
+    <title>Contact Form (fillout) | Guitarrr!</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica+SC&family=Open+Sans&display=swap"
@@ -24,51 +23,46 @@
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
 </head>
-
+<body>
     <main>
+        <form id="contactForm" action="https://larsingeprojects.one/guitarrr/insert.php" method="POST">
+            <div>
+                <label>
+                    Name
+                    <input type="name" name="full_name" id="name" placeholder="Min. 6 characters"/>
+                </label>
+                <div class="form-error" id="nameError">Please enter your name</div>
+            </div>
         
-            
-            <form id="contactForm" action="https://larsingeprojects.one/guitarrr/insert.php" method="POST">
-                <div>
-                    <label>
-                        Name
-                        <input type="name" name="full_name" id="name" placeholder="Min. 6 characters"/>
-                    </label>
-                    <div class="form-error" id="nameError">Please enter your name</div>
-                </div>
-        
-                <div>
-                    <label>
-                        Email
-                        <input type="email" name="email" id="email" placeholder="E g. myname@contact.com"/>
-                    </label>
-                    <div class="form-error" id="emailError">Please enter a valid email address</div>
-                </div>
+            <div>
+                <label>
+                    Email
+                    <input type="email" name="email" id="email" placeholder="E g. myname@contact.com"/>
+                </label>
+                <div class="form-error" id="emailError">Please enter a valid email address</div>
+            </div>
 
-                <div>
-                    <label>
-                        Subject
-                        <input type="subject" name="full_subject" id="subject" placeholder="Min. 16 characters"/>
-                    </label>
-                    <div class="form-error" id="subjectError">Please enter a subject</div>
-                </div>
+            <div>
+                <label>
+                    Subject
+                    <input type="subject" name="full_subject" id="subject" placeholder="Min. 16 characters"/>
+                </label>
+                <div class="form-error" id="subjectError">Please enter a subject</div>
+            </div>
         
-                <div>
-                    <label>
-                        Message
-                        <textarea type="message" name="full_message" id="message" placeholder="Min. 26 characters"></textarea>
-                    </label>
-                    <div class="form-error" id="messageError">Please enter a message</div>
-                </div>
-                <div class="buttons">
-                <button id="submit" type="submit">Submit</button>
-                </div>
-            </form>
-        </div>
+            <div>
+                <label>
+                    Message
+                    <textarea type="message" name="full_message" id="message" placeholder="Min. 26 characters"></textarea>
+                </label>
+                <div class="form-error" id="messageError">Please enter a message</div>
+            </div>
+            
+            <button id="submit" type="submit">Submit</button>
+            <div class="form-error" id="generalError">Please fill in all required fields</div>
+        </form>
     </main>
-    
     <script src="js/search.js"></script>
     <script src="js/contact.js"></script>
 </body>
-
 </html>

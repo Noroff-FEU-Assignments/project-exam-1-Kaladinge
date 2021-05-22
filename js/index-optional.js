@@ -7,8 +7,8 @@ const prevMobile = document.querySelector(".prev-mobile");
 const nextMobile = document.querySelector(".next-mobile");
 const slides = document.querySelectorAll(".my-slides");
 
-const dots = document.querySelectorAll(".dot-container .dot");
-const mobileDots = document.querySelectorAll(".dot-container-mobile .dot");
+var dots = document.querySelectorAll(".dot-container .dot");
+var mobileDots = document.querySelectorAll(".dot-container-mobile .dot");
 
 const apiUrl =
     "https://larsingeprojects.one/guitarrr/wp-json/wp/v2/";
@@ -81,64 +81,83 @@ function individualCarouselPosts(results,container,extraClass) {
 
 console.log(slideShowContainer);
 
-/* desktop function */
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
 
 function showSlides(n) {
-
-    slidesGeneral(n, slides, dots);
     
+    var i;
+    var slides = document.querySelectorAll(".my-slides");
+    
+    
+    var slideLength = slides.length;
+    var dotLength = dots.length;
+
+    console.log(slideLength);
+
+ console.log(slides);
+ console.log(slideLength);
+
+ if (n > slideLength) {slideIndex = 1}
+ if (n < 1) {slideIndex = slideLength}
+ console.log(n);
+for (i = 0; i < slideLength; i++) {
+    slides[i].style.display = "none";
+}
+
+for (i = 0; i < dotLength; i++) {
+    dots[i].className = dots[i].className.replace(" active-dot", "");
+}
+
+console.log(slides[slideIndex-1]);
+dots[slideIndex-1].className += " active-dot";
+slides[slideIndex-1].style.display = "block";
 }
 
 dots.forEach(function(dot, number) {   
                 dot.onclick = function() {showSlides(slideIndex = number + 1);}
                   });
 
-
+                  
 /* mobile function */
 var slideIndexMobile = 1;
-showSlidesMobile(slideIndex);
+showSlidesMobile(slideIndexMobile);
 
-function showSlidesMobile(n) {
+function showSlidesMobile(m) {
 
-    slidesGeneral(n, mobileSlides, mobileDots);
-}
+    var lengthy = 12;
+    var dotLength = mobileDots.length;
 
-mobileDots.forEach(function(dot, number) {   
-                dot.onclick = function() {showSlidesMobile(slideIndex = number + 1);}
-                  });
-   
+    if (m > lengthy) {slideIndexMobile = 1}
+    if (m < 1) {slideIndexMobile = lengthy}
+    console.log(m);
  
-/* General slideshow function*/
-function slidesGeneral(n, slidenumber, dottype) {
-    
-    var slideLength = slidenumber.length;
-    var dotLength = dottype.length;
-    console.log(slideIndex);
-
- if (n > slideLength) {slideIndex = 1}
- if (n < 1) {slideIndex = slideLength}
- 
-for (i = 0; i < slideLength; i++) {
-    slidenumber[i].style.display = "none";
+    for (i = 0; i < lengthy; i++) {
+    mobileSlides[i].style.display = "none";
 }
 
 for (i = 0; i < dotLength; i++) {
-    dottype[i].className = dottype[i].className.replace(" active-dot", "");
+    mobileDots[i].className = mobileDots[i].className.replace(" active-dot", "");
 }
 
-dottype[slideIndex-1].className += " active-dot";
-slidenumber[slideIndex-1].style.display = "block";
+    mobileDots[slideIndexMobile-1].className += " active-dot";
+    mobileSlides[slideIndexMobile-1].style.display = "block";
 }
-                
+
+mobileDots.forEach(function(dot, number) {   
+                dot.onclick = function() {showSlidesMobile(slideIndexMobile = number + 1);}
+                  });
+
+
 /* prev/next functionality */
 
 prev.addEventListener("click", function() {showSlides(slideIndex -= 1);});
 next.addEventListener("click", function() {showSlides(slideIndex += 1);});
-prevMobile.addEventListener("click", function() {showSlidesMobile(slideIndex -= 1)});
-nextMobile.addEventListener("click", function() {showSlidesMobile(slideIndex += 1)});
+prevMobile.addEventListener("click", function() {showSlidesMobile(slideIndexMobile -= 1)});
+nextMobile.addEventListener("click", function() {showSlidesMobile(slideIndexMobile += 1)});
+
 
 
 

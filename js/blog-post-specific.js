@@ -1,12 +1,12 @@
 /* For API */
 const title = document.querySelector("title");
 const body = document.querySelector("body");
-const slideShow = document.querySelector(".slideshow-container");
+const blogpostContainer = document.querySelector(".blogpost-container");
 const blogType = document.querySelector(".nav-info span");
 
 /* For Modal */
-const modal = document.getElementById("myModal");
-const modalImg = document.getElementById("img01");
+const modal = document.getElementById("my-modal");
+const modalImg = document.getElementById("modal-image");
 const closeButton = document.getElementsByClassName("close")[0];
 const captionText = document.getElementById("caption");
 
@@ -39,7 +39,7 @@ async function fetchApi(url) {
 
         title.innerHTML = json.title.rendered;
             
-            slideShow.innerHTML = `<div class="content">
+            blogpostContainer.innerHTML = `<div class="content">
                                         <div class="heading">
                                             <h2>${json.title.rendered}</h2>
                                             <hr>
@@ -74,7 +74,7 @@ async function fetchApi(url) {
 
     } catch (error) {
         console.log(error);
-        slideShow.innerHTML = showError("Something went wrong.");
+        blogpostContainer.innerHTML = showError("Something went wrong.");
     }
 };
 

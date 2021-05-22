@@ -70,7 +70,7 @@ function singleBlog(results,n) {
     
 
     blogContainer.innerHTML += `<div class="blocks">
-                                    <a href="blog-post-specific.html?id=${results.id}"><img src="${results._embedded['wp:featuredmedia']['0'].source_url}" class="image">
+                                    <a href="blog-post-specific.html?id=${results.id}"><div class="image-container"><img src="${results._embedded['wp:featuredmedia']['0'].source_url}" class="image"></div>
                                     <div class="numbertext"> ${n}/ 12</div>
                                     <h2 class="left">${results.title.rendered}</h2>
                                     <p class="left">${results._embedded['wp:term']['0']['0'].name}</p>

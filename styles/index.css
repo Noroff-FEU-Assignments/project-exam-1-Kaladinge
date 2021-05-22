@@ -54,7 +54,7 @@
   background-color: black;
 }
 
-.mySlides {
+.my-slides {
   margin: 20px 0px;
   animation-name: fade;
   animation-duration: 1s;
@@ -79,9 +79,9 @@
   vertical-align: text-top;
 }
 
-.numbertext {
+.category {
   position: absolute;
-  bottom: 0px;
+  bottom: 4px;
   left: 0px;
   background-color: #f8f8f8;
   padding: 5px 10px;
@@ -143,10 +143,7 @@ main {
   transition: 0.5s ease;
 }
 
-.next:hover {
-  background-color: #edebeb;
-}
-
+.next:hover,
 .prev:hover {
   background-color: #edebeb;
 }
@@ -179,7 +176,7 @@ main {
   display: none;
 }
 
-.band-container2 {
+.band-container {
   width: 100%;
   margin: 40px auto;
   position: relative;
@@ -192,7 +189,6 @@ main {
   object-position: top;
 }
 
-#topic-text2,
 #news,
 #lessons,
 #personal {
@@ -243,6 +239,10 @@ main {
   text-align: center;
 }
 
+#articles {
+  display: none;
+}
+
 @media only screen and (max-width: 1300px) {
   .blocks {
     margin: 0px 6px;
@@ -268,6 +268,18 @@ main {
     width: 200px;
   }
 
+  .post-header {
+    min-height: 100px;
+  }
+
+  .image-container {
+    text-align: center;
+  }
+
+  .image {
+    width: 70%;
+  }
+
   .info-text span:before,
   .info-text span:after {
     width: 150px;
@@ -284,10 +296,10 @@ main {
   .blocks-mobile {
     display: block;
     margin: 20px auto;
-    width: 65%;
+    width: 85%;
   }
 
-  .mobileSlides {
+  .mobile-slides {
     animation-name: fade;
     animation-duration: 1s;
   }
@@ -324,11 +336,13 @@ main {
   }
 
   .next-mobile {
-    right: 1%;
+    right: 0%;
+    top: 30%;
   }
 
   .prev-mobile {
-    left: 1%;
+    left: 0%;
+    top: 30%;
   }
 
   .info-text span:before,
@@ -341,7 +355,7 @@ main {
     max-width: 80%;
   }
 
-  .band-container2 {
+  .band-container {
     margin: 0px auto;
     position: relative;
   }
@@ -352,20 +366,18 @@ main {
     object-fit: cover;
   }
 
-  #news {
-    top: 5px;
-    font-size: 4vw;
-  }
-
-  #lessons {
-    left: 47%;
-    top: -5px;
-    font-size: 4vw;
-  }
-
+  #news,
+  #lessons,
   #personal {
-    left: 80%;
-    top: 0px;
-    font-size: 4vw;
+    display: none;
+  }
+
+  #articles {
+    display: block;
+    position: absolute;
+    top: 150px;
+    right: 5%;
+    color: white;
+    text-transform: uppercase;
   }
 }

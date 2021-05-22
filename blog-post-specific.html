@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A place for all guitar enthusiasts, big and small, to feel at home." />
+    <meta name="description" content="Single blog post page."/>
     <title></title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -46,23 +45,22 @@
             <form action="">
                 <input type="text" placeholder="Search..." name="search">
                 <button type="submit" class="search"><i class="fa fa-search"></i></button>
-                <!--<input type="text" placeholder="Search..." name="search">-->
             </form>
         </div>
     </nav>
     <main>
         <p class="nav-info"><a href="index.html" class="nav-info-link">Home</a><a href="blog-list.html" class="nav-info-link">/Blog List/</a><span></span></p>
         <!-- Specific blog-post -->
-        <div class="slideshow-container">
+        <div class="blogpost-container">
             <div class="load-container">
                 <img src="images/guitar-blue.png" alt="loader-image" id="guitar">
             </div>
         </div>
 
         <!-- Modal-->
-        <div id="myModal" class="modal">
+        <div id="my-modal" class="modal">
             <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
+            <img class="modal-content" id="modal-image">
             <div id="caption"></div>
         </div>
         
@@ -86,13 +84,12 @@
                     alt="facebook"></a>
             <a href="https://www.youtube.com" class="social-links"><img src="images/youtube.svg" class="social-media"
                     alt="youtube"><a>
-                    <a href="https://www.snapchat.com" class="social-links"><img src="images/snapchat.svg"
-                            class="social-media" alt="snapchat"></a>
+            <a href="https://www.snapchat.com" class="social-links"><img src="images/snapchat.svg" class="social-media" 
+                    alt="snapchat"></a>
         </div>
     </footer>
     <script src="js/search.js"></script>
     <script src="js/error-message.js"></script>
     <script src="js/blog-post-specific.js"></script>
 </body>
-
 </html>

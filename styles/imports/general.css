@@ -118,6 +118,13 @@ nav {
   display: none;
 }
 
+/* main */
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
 .error {
   background: red;
   color: rgb(82, 1, 1);
@@ -126,13 +133,6 @@ nav {
   max-height: 50px;
   margin: 40px auto;
   padding: 10px;
-}
-
-/* main */
-
-main {
-  margin: 0;
-  padding: 0;
 }
 
 #hamburger-menu,
@@ -153,9 +153,6 @@ footer {
 .social-media {
   width: 30px;
   margin-right: 10px;
-}
-
-.social-media:hover {
 }
 
 .footer-box {

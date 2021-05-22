@@ -123,4 +123,17 @@ a {
   .blog-container {
     margin: 10px 20px;
   }
+
+  .image {
+    width: 70%;
+  }
+
+  .image-container {
+    text-align: center;
+  }
+
+  .numbertext {
+    right: 15%;
+    top: 0;
+  }
 }
