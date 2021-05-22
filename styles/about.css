@@ -8,14 +8,15 @@
 
 #profile-pic {
   float: right;
-  margin: 20px;
+  margin-left: 20px;
+  max-width: 400px;
 }
 
 .mobile-search {
   display: none;
 }
 
-#mobile {
+#mobile-pic {
   display: none;
 }
 
@@ -24,7 +25,8 @@
     display: none;
   }
 
-  #mobile {
+  #mobile-pic {
     display: block;
+    width: 50%;
   }
 }
