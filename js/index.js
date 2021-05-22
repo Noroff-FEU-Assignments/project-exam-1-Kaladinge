@@ -69,7 +69,8 @@ function individualCarouselPosts(results,container,extraClass) {
                             });
 
                             container.innerHTML += `<div class="blocks ${extraClass}">
-                                                    <a href="blog-post-specific.html?id=${results.id}"><div class="image-container"><img src="${results._embedded['wp:featuredmedia']['0'].source_url}" class="image"></div>
+                                                    <a href="blog-post-specific.html?id=${results.id}">
+                                                    <div class="image-container"><img src="${results._embedded['wp:featuredmedia']['0'].source_url}" class="image" alt="blog post presentation picture"></div>
                                                     <div class="category">${results._embedded['wp:term']['0']['0'].name}</div>
                                                     <h2 class="left post-header">${results.title.rendered}</h2>
                                                     <p class="right"><img src="images/clock.svg" alt="clock-icon" class="icon">${formatDate}</p>

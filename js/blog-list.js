@@ -120,7 +120,8 @@ function presentCategory(event) {
                 });
 
                 blogContainer.innerHTML += `<div class="blocks">
-                                <a href="blog-post-specific.html?id=${results[i].id}"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image">
+                                <a href="blog-post-specific.html?id=${results[i].id}">
+                                <div class="image-container"><img src="${results[i]._embedded['wp:featuredmedia']['0'].source_url}" class="image" alt="blog post presentation picture"></div>
                                 <div class="numbertext">${n} / ${results.length}</div>
                                 <h2 class="left">${results[i].title.rendered}</h2>
                                 <p class="left">${results[i]._embedded['wp:term']['0']['0'].name}</p>
