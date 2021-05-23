@@ -1,7 +1,7 @@
 /* header */
 
 html {
-  background-color: #f8f8f8;
+  background-color: white;
 }
 
 body {
@@ -140,7 +140,7 @@ main {
   display: none;
 }
 
-/* footer */
+/* footer*/
 
 footer {
   margin-top: 50px;

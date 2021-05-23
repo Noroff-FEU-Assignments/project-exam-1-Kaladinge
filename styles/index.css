@@ -45,7 +45,7 @@
   width: 15px;
   border-radius: 50%;
   margin: 0 3px;
-  background-color: brown;
+  background-color: #d8a647;
   display: inline-block;
 }
 
@@ -68,6 +68,7 @@
     opacity: 1;
   }
 }
+/*#f8f8f8*/
 
 .blocks {
   display: inline-block;
