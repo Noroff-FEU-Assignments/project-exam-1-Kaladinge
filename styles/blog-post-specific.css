@@ -80,7 +80,8 @@ figure img {
 .modal-content {
   display: block;
   margin: auto;
-  max-height: 300px;
+  max-width: 60%;
+  max-height: 500px;
   border: 1px solid white;
 }
 
