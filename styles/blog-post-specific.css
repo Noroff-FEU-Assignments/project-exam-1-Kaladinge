@@ -79,9 +79,9 @@ figure img {
 
 .modal-content {
   display: block;
-  width: 60%;
   margin: auto;
-  max-width: 500px;
+  max-height: 500px;
+  border: 1px solid white;
 }
 
 .close {
